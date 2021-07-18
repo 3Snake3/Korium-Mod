@@ -1,3 +1,3 @@
-function r(obj){  require(r)  }
+function r(obj){  require(obj)  }
 
 r("planets");
