@@ -28,9 +28,9 @@ function createSector(name, mapName, description, planet, sectorNum, difficulty,
 /////////////////////////////
 /////////////////////////////
 
-function createPlanet(name, parent, size, OrbitRadius, RotateTime, startSector, gen){
+function createPlanet(name, parent, sectorRadius, size, OrbitRadius, RotateTime, startSector, gen){
 
-   let newPlanet = extend(Planet, name, parent, 3, size, {});
+   let newPlanet = extend(Planet, name, parent, sectorRadius, size, {});
 
    newPlanet.localizedName = name;
 
@@ -85,7 +85,7 @@ function addAtmosphere(object, color, radIn, radOut);
 /////////////////////////////
 /////////////////////////////
 
-function planetDetails(object, level){
+function setDetails(object, level){
    object.meshLoader = () => new HexMesh(object, level);
 }
  
@@ -114,8 +114,8 @@ function createStar(name, parent, size, OrbitRadius, color1, color2, color3, col
    return newStar;
 }
 
-///////////////////////////////
-///////////////////////////////
+//////////////////////////////////////////
+//////////////////////////////////////////
 
 function createGenerator(scl, water, arr){
 
@@ -443,64 +443,70 @@ return newGenerator;
 ///////// EXAMPLE /////////
 ///////// /// /// /////////
 
-//const myPlanet = createPlanet(false, "Zeluro", Planets.sun, 1.0, 20.1, 980, true, "#fca905", 35, 
-//   createGenerator(7.224189, 2 / 169, 
-let newArr = [
-         [Blocks.stone, Blocks.stone, Blocks.stone, Blocks.snow, Blocks.snow, Blocks.darksand, Blocks.snow, Blocks.stone, Blocks.snow, Blocks.darksand, Blocks.dacite, Blocks.stone, Blocks.snow],
-         [Blocks.stone, Blocks.water, Blocks.iceSnow, Blocks.snow, Blocks.stone, Blocks.ice, Blocks.stone, Blocks.snow, Blocks.stone, Blocks.darksand, Blocks.stone, Blocks.stone, Blocks.stone],
-         [Blocks.snow, Blocks.water, Blocks.darksand, Blocks.darksand, Blocks.stone, Blocks.darksand, Blocks.stone, Blocks.darksand, Blocks.darksandWater, Blocks.stone, Blocks.darksand, Blocks.ice, Blocks.dacite],
-
-         [Blocks.water, Blocks.darksandWater, Blocks.stone, Blocks.dacite, Blocks.stone, Blocks.ice, Blocks.water, Blocks.darksand, Blocks.darksandWater, Blocks.stone, Blocks.darksandWater, Blocks.iceSnow, Blocks.ice],  
-         [Blocks.ice, Blocks.darksand, Blocks.darksand, Blocks.stone, Blocks.snow, Blocks.stone, Blocks.darksand, Blocks.darksandWater, Blocks.darksand, Blocks.stone, Blocks.stone, Blocks.snow, Blocks.dacite],  
-         [Blocks.stone, Blocks.dacite, Blocks.stone, Blocks.stone, Blocks.dacite, Blocks.stone, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.snow, Blocks.stone, Blocks.ice, Blocks.snow],  
-
-         [Blocks.stone, Blocks.stone, Blocks.snow, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.snow, Blocks.stone, Blocks.darksand, Blocks.stone, Blocks.dacite, Blocks.stone, Blocks.ice],  
-         [Blocks.dacite, Blocks.stone, Blocks.dacite, Blocks.darksandWater, Blocks.darksandWater, Blocks.darksand, Blocks.dacite, Blocks.stone, Blocks.stone, Blocks.darksand, Blocks.stone, , Blocks.snow],  
-         [Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.darksandWater, Blocks.darksandWater, Blocks.snow, Blocks.water, Blocks.stone, Blocks.darksand, Blocks.darksandWater, Blocks.snow, Blocks.dacite, Blocks.iceSnow],
-
-         [Blocks.darksandWater, Blocks.ice, Blocks.darksand, Blocks.darksand, Blocks.stone, Blocks.darksand, Blocks.stone, Blocks.darksandWater, Blocks.snow, Blocks.darksand, Blocks.ice, Blocks.dacite, Blocks.ice], 
-         [Blocks.darksand, Blocks.water, Blocks.stone, Blocks.darksand, Blocks.stone, Blocks.darksandWater, Blocks.stone, Blocks.darksand, Blocks.dacite, Blocks.darksandWater, Blocks.iceSnow, Blocks.dacite], 
-         [Blocks.darksand, Blocks.stone, Blocks.stone, Blocks.darksandWater, Blocks.ice, Blocks.darksand, Blocks.stone, Blocks.darksand, Blocks.stone, Blocks.darksandWater, Blocks.snow, Blocks.ice, Blocks.snow],
-         [Blocks.stone, Blocks.stone, Blocks.darksand, Blocks.darksandWater, Blocks.stone, Blocks.dacite, Blocks.water, Blocks.snow, Blocks.stone, Blocks.darksand, Blocks.snow, Blocks.ice, Blocks.ice]
-      ]
-   )
-)
-
-
-//const testSector = createSector("Test Sector", "test-sector", "Yess is a test sector", myPlanet, 35, 4, 30, true);
-
 /////////// /// /// ///////////
 ////////// TECH TREE //////////
 /////////// /// /// ///////////
 
 function node(par, child, requirs){
-   TechTree.TechNode(par, child, requirs);
+   new TechTree.TechNode(TechTree.get(par), child, requirs);
+}
+
+function newPlanetContent(name, planetSize, planetTemp){
+   var planetContent = extendContent(Item, name, {
+	   
+      setStats(){
+         stats.add(Stat.size, planetSize);
+	 stats.add(Stat.temperature, planetTemp);
+      }
+   })
+
+   return planetContent;
 }
 
 /////// KORIUM CONTENT ////////
 
-const korin = createPlanet("Korin", Planets.sun, 1.0, 16.3, 1000, 20, 
-   createGenerator(3.11809361, 2/171, 
-      [
-         [  ]
-         [  ]
-         [  ]
-     
-         [  ]
-         [  ]
-         [  ]
-  
-         [  ]
-         [  ]
-         [  ]
+const water = Blocks.water;
+const grass = Blocks.grass;
+const dacite = Blocks.dacite;
+const stone = Blocks.stone;
+const sand = Blocks.sand;
+const sandWater = Blocks.sandWater;
+const ice = Blocks.ice;
+const snow = Blocks.snow;
+const iceSnow = Blocks.iceSnow;
 
-         [  ]
-         [  ]
-         [  ]
-         [  ]
+
+const korin = createPlanet("Korin", Planets.sun, 2, 1.0, 16.3, 1000, 20, 
+   createGenerator(3.11809361, 2/171, 
+      [//   1       2       3          4         5            6         7             8       9          10         11        12
+         [water,  stone,  grass,     grass,     sand,       stone,     sand,      sandWater, sand,      stone,     water,  Blocks.dacite, Blocks.dacite],
+         [stone,  water,  water,     sand,      sand,       sand,      sand,      sandWater, sand,      sand,      grass,  Blocks.dacite, Blocks.dacite],
+         [grass,  stone,  grass,     sand,      sandWater,  sand,      sand,      sand,      sand,      grass,     stone,  Blocks.dacite, ],
+	
+         [water,  water,  grass,     sand,      sandWater,  sand,      sandWater, stone,     sandWater, dacite,    stone,  Blocks.water, Blocks.dacite],  
+         [water,  water,  sandWater, stone,     sand,       sand,      sandWater, stone,     sand,      grass,     grass,  Blocks.water, Blocks.dacite],  
+         [grass,  water,  sandWater, sand,      sand,       sandWater, sandWater, sand,      grass,     sand,      stone,  Blocks.water, Blocks.dacite],  
+	
+         [water,  water,  grass,     sand,      sand,       sandWater, sand,      sandWater, stone,     sand,      grass,  Blocks.water, Blocks.water],  
+         [water,  grass,  sand,      sand,      sandWater,  sand,      stone,     sandWater, sand,      sandWater, dacite, Blocks.grass, Blocks.dacite],  
+         [water,  water,  sand,      sandWater, sandWater,  sand,      sand,      water,     sand,      sandWater, grass,  stone, Blocks.dacite],
+	
+         [dacite, grass,  sand,      sandWater, water,      stone,     sand,      water,     sandWater, water,     grass,  dacite, Blocks.dacite], 
+         [water,  water,  sandWater, sandWater, water,      dacite,    sandWater, sandWater, sandwater, sandWater, dacite, dacite, Blocks.dacite], 
+         [water,  water,  sandWater, sand,      dacite,     sandWater, dacite,    sand,      sand,      sand,      stone,  iceSnow, snow],
+         [grass,  grass,  sand,      grass,     sand,       sandwater, grass,     sand,      sand,      grass,     stone,  snow,    ice]
       ]
 
    )
 )
+
+addAtmosphere(korin, "F2F09C", default, default);
+
+details(korin, 4);
+
+const korinIcon = newPlanetContent("korin", 1, 0.20);
+node(Blocks.coreShard, korinIcon, ItemStack.empty);
+
+
 
 
