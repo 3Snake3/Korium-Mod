@@ -48,7 +48,7 @@ function createPlanet(name, parent, sectorRadius, size, OrbitRadius, RotateTime,
 /////////////////////////////
 /////////////////////////////
 
-function addAtmosphere(object, color, radIn, radOut);
+function addAtmosphere(object, color, radIn, radOut){
 
    object.hasAtmosphere = true;
 
