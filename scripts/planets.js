@@ -56,24 +56,16 @@ function addAtmosphere(object, color, radIn, radOut){
       object.atmosphereColor = Color.valueOf(color);
    }
 
-   if(radIn = null){
-      object.atmosphereRadIn = 0;
-   }else{
       if(radIn == "default"){
          object.atmosphereRadIn = 0.06;
       }else{
          object.atmosphereRadIn = radIn;
       }
-   }
 
    if(radOut = null){
       object.atmosphereRadOut = 0;
    }else{
-      if(radOut == "default"){
-         object.atmosphereRadOut = 0.32;
-      }else{
          object.atmosphereRadOut = radOut;
-      }
    }
 
    if(color != null && color !== "default"){
