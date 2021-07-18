@@ -1,0 +1,17 @@
+{
+name: upp
+
+displayName:"Korium Mod"
+
+author: SuperJaba2000
+
+description:
+"[red]BETA VERSION!!!\n\n
+
+[accent] Amogus\n
+[accent]Autors:SuperJaba2000[]\n
+using planet-library from SuperJaba2000"
+
+minGameVersion: "126.2"
+version: pre-alpha 0.1
+}
