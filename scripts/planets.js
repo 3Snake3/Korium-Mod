@@ -438,8 +438,8 @@ function newPlanetContent(name, planetSize, planetTemp){
    var planetContent = extendContent(Item, name, {
 	   
       setStats(){
-         stats.add(Stat.size, planetSize);
-	 stats.add(Stat.temperature, planetTemp);
+         Stats.add(Stat.size, planetSize);
+	 Stats.add(Stat.temperature, planetTemp);
       }
    })
 
