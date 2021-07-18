@@ -500,7 +500,7 @@ const korin = createPlanet("Korin", Planets.sun, 2, 1.0, 16.3, 1000, 20,
    )
 )
 
-addAtmosphere(korin, "F2F09C", default, default);
+addAtmosphere(korin, "F2F09C", 0.06, 0.32);
 
 details(korin, 4);
 
