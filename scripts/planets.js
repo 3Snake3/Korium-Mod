@@ -481,7 +481,7 @@ const korin = createPlanet("Korin", Planets.sun, 2, 1.0, 16.3, 1000, 20,
       [//   1       2       3          4         5            6         7             8       9          10         11        12
          [water,  stone,  grass,     grass,     sand,       stone,     sand,      sandWater, sand,      stone,     water,  Blocks.dacite, Blocks.dacite],
          [stone,  water,  water,     sand,      sand,       sand,      sand,      sandWater, sand,      sand,      grass,  Blocks.dacite, Blocks.dacite],
-         [grass,  stone,  grass,     sand,      sandWater,  sand,      sand,      sand,      sand,      grass,     stone,  Blocks.dacite, ],
+         [grass,  stone,  grass,     sand,      sandWater,  sand,      sand,      sand,      sand,      grass,     stone,  Blocks.dacite, sandWater],
 	
          [water,  water,  grass,     sand,      sandWater,  sand,      sandWater, stone,     sandWater, dacite,    stone,  Blocks.water, Blocks.dacite],  
          [water,  water,  sandWater, stone,     sand,       sand,      sandWater, stone,     sand,      grass,     grass,  Blocks.water, Blocks.dacite],  
