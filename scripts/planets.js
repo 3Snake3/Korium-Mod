@@ -485,7 +485,7 @@ const korin = createPlanet("Korin", Planets.sun, 2, 1.0, 16.3, 1000, 20,
 
 addAtmosphere(korin, "F2F09C", 0.06, 0.32);
 
-details(korin, 4);
+setDetails(korin, 4);
 
 const korinIcon = newPlanetContent("korin", 1, 0.20);
 node(Blocks.coreShard, korinIcon, ItemStack.empty);
