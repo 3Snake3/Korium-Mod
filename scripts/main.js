@@ -15,7 +15,7 @@ require("vanillaContent/environment");
    // sunlight //
 
    require("sunlinght/turrets");
-   require("sunlinght/power");
+   require("sunlinght/blocks/power");
 
     // empire //
 	
