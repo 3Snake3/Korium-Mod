@@ -1,13 +1,4 @@
-const korium = koriummod-korium;
-const siron = koriummod-siron;
-const norium = koriummod-norium;
 
-function node(parent2, block, requirements, objectives){
-	var parent = TechTree.all.find(node => node.content == parent2);
-	var node = new TechTree.TechNode(parent, block, requirements);
-	
-	node.objectives.add(objectives);
-}; 
 
 //FUNCTIONS
 
@@ -26,4 +17,17 @@ function newEmpireCore(name, health, size, item, colich, itemCapacity, unitCapMo
 
 //CORE "STAR"
 
-const coreStar = newEmpireCore("core-star", 2100, 3, siron, 700, 6000, 20, UnitTypes.gamma);
+const coreStar = extendContent(CoreBlock, "core-star", {
+    
+    localizedName: "Core Star",
+    description: "aboba",
+
+    category: Category.effect,
+    buildVisibility: BuildVisibility.shown,
+
+    size: 4,
+
+});
+
+coreStar.requirements = ItemStack.with();
+newEmpireCore("core-star", 2100, 3, siron, 700, 6000, 20, UnitTypes.gamma);
