@@ -1,20 +1,3 @@
-
-
-//FUNCTIONS
-
-function newEmpireCore(name, health, size, item, colich, itemCapacity, unitCapModifier, unitType){
-    const core = extendContent(CoreBlock, name, {});
-    core.buildVisibility = BuildVisibility.shown;
-	core.size = size;
-	core.health = health;
-    core.category = Category.effect;
-	core.itemCapacity = itemCapacity;
-	core.unitCapModifier = unitCapModifier;
-	core.unitType = unitType;
-    core.requirements = ItemStack.with(item, colich);
-    return core;
-};
-
 //CORE "STAR"
 
 const coreStar = extendContent(CoreBlock, "core-star", {
@@ -26,8 +9,14 @@ const coreStar = extendContent(CoreBlock, "core-star", {
     buildVisibility: BuildVisibility.shown,
 
     size: 4,
+    health: 4800,
+    itemCapacity: 9500,
+    unitType: UnitTypes.gamma,//TODO mod unit
+    unitCapModifier: 16,
+    researchCostMultiplier: 0.08,
+
+    thrusterLenght: 35/4,
 
 });
 
-coreStar.requirements = ItemStack.with();
-newEmpireCore("core-star", 2100, 3, siron, 700, 6000, 20, UnitTypes.gamma);
+coreStar.requirements = ItemStack.with(Items.copper, 2000, siron, 3000, Items.graphite, 1000, Items.silicon, 2000);
