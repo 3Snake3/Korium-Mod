@@ -1,3 +1,5 @@
+const siron = Vars.content.getByName(ContentType.item, "koriummod-siron");
+
 //CORE "STAR"
 
 const coreStar = extendContent(CoreBlock, "core-star", {
