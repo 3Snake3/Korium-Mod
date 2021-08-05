@@ -19,7 +19,7 @@ require("vanillaContent/environment");
 
     // empire //
 	
-	//require("");
+    require("empire/cores");
 	
 	
 	
