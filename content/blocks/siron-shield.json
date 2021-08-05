@@ -1,0 +1,26 @@
+health:900
+size:4
+phaseUseTime:110
+phaseRadiusBoost:17
+radius:210
+shieldHealth:4200
+cooldownNormal:3.5
+cooldownLiquid:1.7
+cooldownBrokenBase:2.5
+basePowerDraw:8.0
+canOverdrive:true
+consumes:{
+power: 13.1
+items:{
+items: [korium/1]
+booster: true
+optional: true
+}
+}
+requirements:[
+siron/120
+silicon/90
+titanium/100
+]
+category:effect
+research:force-projector

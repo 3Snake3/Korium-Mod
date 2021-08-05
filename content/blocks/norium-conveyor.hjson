@@ -1,0 +1,22 @@
+type:itemBridge
+health:15
+size:1
+speed:50
+update:true
+solid:true
+posConfig:true
+range:5
+trasnportTime:0.8
+configurable:true
+unloadable:false
+expanded:true
+hasItems:true
+itemCapacity:15
+hasPower:false
+requirements: [
+norium/8
+//veton/10
+lead/5
+]
+category:distribution
+research:bridge-conveyor

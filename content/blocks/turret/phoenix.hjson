@@ -1,0 +1,39 @@
+type:itemTurret
+range:124
+recoil:21
+reloadTime:9
+size:3
+shots:17
+health:1200
+inaccuracy:0.4
+rotatespeed:2
+targetAir:false
+targetGround:true
+ammoTypes: {
+  coal: {
+  	bulletType:pyraFlame
+    damage:124
+    width:1
+    height:4
+  	ammoMultiplier:2
+  	hitSize:21
+  	lifetime:39
+  	pierce:true
+  	collidesAir:true
+  	statusDuration:130
+  	shootEffect:shootPyraFlame
+  	hitEffect:hitFlameSmall
+  	status:burning
+  	hittable:false 
+  }
+}
+consumes: {
+liquid:water/0.1
+}
+requirements: [
+  silicon/50
+  thorium/45
+  titanium/70
+]
+ category: turret
+ research: scorch

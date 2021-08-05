@@ -1,0 +1,45 @@
+type:itemTurret
+range: 190
+recoil: 28
+reloadTime: 190
+size: 2
+shots: 6
+health: 1600
+inaccuracy: 0
+liquidBoostIntensity: 1.7
+rotatespeed: 0.6
+targetAir: true
+targetGround: true
+ammoTypes: {
+  korium: {
+    type: basicBulletType
+    speed: 5
+    hitSize: 30
+    lifetime: 40
+    status:unmoving
+    statusDuration:38
+	bulletSprite:wave
+    pierce: true
+    width: 64
+    length: 4
+	hittable: true
+  }
+}
+consumes: {
+power: 11.4
+ liquid: {
+  liquid: water
+  amount: 0.2
+  booster: true
+  optional: false
+  }
+}
+requirements: [
+  korium/150
+  plastanium/150
+  silicon/500
+  titanium/180
+  metaglass/140
+]
+ category: turret
+ research: arc

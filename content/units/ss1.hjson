@@ -1,0 +1,38 @@
+type:naval
+health:250
+speed:1.1
+range:100
+mechSideSway:0.25
+hitsize:2
+rotateSpeed:2
+armor:0.9
+canBoost:false
+commandLimit:4
+hovering: false
+buildSpeed: 1.3
+ammoTypes: powerHigh
+weapons: [
+{
+  name:harpoon-small
+  x: 3
+  y: -1.5
+  shootY: 3
+  reload: 23
+  ejectEffect: none
+  recoil: 5
+  rotate: false
+  shootSound: sap
+  bullet: {
+    type: SapBulletType
+    sapStrength: 1.5
+    length: 50
+    damage: 12
+    shootEffect: shootSmall
+    hitColor: 66ac78
+    color: 519362
+    despawnEffect: none
+    width: 0.54
+    lifetime: 10
+    knockback: -2.20
+  }
+}]

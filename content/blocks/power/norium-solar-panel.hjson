@@ -1,0 +1,10 @@
+type: SolarGenerator
+research: solar-panel-large
+powerProduction: 2.6
+size: 3
+health: 190
+category: power
+requirements: [
+  norium/130
+  metaglass/70
+]

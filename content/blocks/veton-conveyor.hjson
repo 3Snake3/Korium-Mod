@@ -1,0 +1,9 @@
+type:ArmoredConveyor
+requirements: [
+ // veton/1
+  titanium/1
+  metaglass/1
+]
+category:distribution
+speed:0.05
+research:armored-conveyor
