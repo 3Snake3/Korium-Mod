@@ -20,8 +20,6 @@ const sironShield = extendContent(ForceProjector, "siron-shield", {
     cooldownBrokenBase: 2.5,
     basePowerDraw: 8.0,
     canOverdrive: true,
-
-    requirements: ItemStack.with(siron, 120, Items.titanium, 95, Items.silicon, 115),
 	
     buildType: prov(() => {
         var entity = extend(ForceProjector.ForceBuild, sironShield,{
@@ -60,5 +58,7 @@ const sironShield = extendContent(ForceProjector, "siron-shield", {
 
 sironShield.consumes.item(korium).boost();
 sironShield.consumes.power(11.1);
+
+sironDhield.requirements = ItemStack.with(siron, 120, Items.titanium, 95, Items.silicon, 115),
 
 
