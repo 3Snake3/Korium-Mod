@@ -34,9 +34,9 @@ const koriumPowerNode = extendContent(PowerNode, "korium-power-node", {
 	category: Category.power,
 	buildVisibility: BuildVisibility.shown,
 	
-	laserColor2: Color.valueOf("#676386"),
-        laserColor1: Color.valueOf("#8276a6"),
-	
+	laserColor1: Color.valueOf("#4e4b64"),
+    laserColor2: Color.valueOf("#676386"),
+
 });
 
 koriumPowerNode.requirements = ItemStack.with(korium, 42);
