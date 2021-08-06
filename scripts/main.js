@@ -14,14 +14,13 @@ require("vanillaContent/environment");
 
    // sunlight //
 
-   require("sunlinght/turrets");
+   require("sunlinght/blocks/turrets");
    require("sunlinght/blocks/power");
 
     // empire //
 	
     require("empire/blocks/cores");
-	
-	
+    require("empire/blocks/defense");
 	
 ////// OTHER //////
 
