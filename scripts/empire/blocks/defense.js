@@ -7,10 +7,10 @@ const sironShield = extendContent(ForceProjector, "siron-shield", {
     description: "abmogubuga",
 	
     category: Category.effect,
-	buildVisibility: BuildVisibility.shown,
+    buildVisibility: BuildVisibility.shown,
 	
-	size: 4,
-	health: 900,
+    size: 4,
+    health: 900,
     phaseUseTime: 110,
     phaseRadiusBoost: 17,
     radius: 210,
@@ -20,9 +20,6 @@ const sironShield = extendContent(ForceProjector, "siron-shield", {
     cooldownBrokenBase: 2.5,
     basePowerDraw: 8.0,
     canOverdrive: true,
-	
-	consumes.item(korium).boost(),
-	consumes.power(11.1),
 
     requirements: ItemStack.with(siron, 120, Items.titanium, 95, Items.silicon, 115),
 	
@@ -61,5 +58,7 @@ const sironShield = extendContent(ForceProjector, "siron-shield", {
 	}),
 });
 
+sironShield.consumes.item(korium).boost();
+sironShield.consumes.power(11.1);
 
 
