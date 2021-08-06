@@ -1,6 +1,26 @@
 const siron = Vars.content.getByName(ContentType.item, "koriummod-siron");
 
-//CORE "STAR"
+//CORE FLICKERING
+
+const coreFlickering = extendContent(CoreBlock, "core-flickering", {
+    
+    localizedName: "Core Flickering",
+    description: "aboba",
+
+    category: Category.effect,
+    buildVisibility: BuildVisibility.shown,
+
+    size: 3,
+    health: 2800,
+    itemCapacity: 4500,
+    unitType: UnitTypes.gamma,//TODO mod unit
+    unitCapModifier: 10,
+
+});
+
+coreFlickering.requirements = ItemStack.with(Items.copper, 1500, siron, 1000, Items.graphite, 500, Items.lead, 200);
+
+//CORE STAR
 
 const coreStar = extendContent(CoreBlock, "core-star", {
     
@@ -10,7 +30,7 @@ const coreStar = extendContent(CoreBlock, "core-star", {
     category: Category.effect,
     buildVisibility: BuildVisibility.shown,
 
-    size: 3,
+    size: 4,
     health: 4800,
     itemCapacity: 9500,
     unitType: UnitTypes.gamma,//TODO mod unit
