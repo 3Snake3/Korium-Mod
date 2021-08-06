@@ -9,7 +9,7 @@ const noriumPanel = extendContent(SolarGenerator, "norium-solar-panel", {
     description: "abogus",
 
     category: Category.power,
-    buildVisibility: buildVisibility.shown,
+    buildVisibility: BuildVisibility.shown,
 
     size: 3,
     health: 170,
