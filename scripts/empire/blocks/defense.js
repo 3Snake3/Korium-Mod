@@ -59,4 +59,4 @@ const sironShield = extendContent(ForceProjector, "siron-shield", {
 sironShield.consumes.item(korium).boost();
 sironShield.consumes.power(11.1);
 
-sironShield.requirements = ItemStack.with(siron, 120, Items.titanium, 95, Items.silicon, 115),
+sironShield.requirements = ItemStack.with(siron, 120, Items.titanium, 95, Items.silicon, 115);
