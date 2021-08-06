@@ -57,4 +57,4 @@ const koriumBatteryLarge = extendContent(Battery, "korium-battery-large", {
 });
 
 koriumBatteryLarge.consumes.powerBuffered(105000);
-koriumbatteryLarge.requirements = ItemStack.with(korium, 150, Items.lead, 80);
+koriumBatteryLarge.requirements = ItemStack.with(korium, 150, Items.lead, 80);
