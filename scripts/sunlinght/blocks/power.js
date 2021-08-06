@@ -40,3 +40,21 @@ const koriumPowerNode = extendContent(PowerNode, "korium-power-node", {
 });
 
 koriumPowerNode.requirements = ItemStack.with(korium, 42);
+
+//KORIUM BATTARY LARGE
+
+const koriumBatteryLarge = extendContent(Battery, "korium-battery-large", {
+	
+	localizedName: "Large Korium battery",
+	description: "amogus dun tun tudun",
+	
+	category: Category.power,
+	buildVisibility: BuildVisibility.shown,
+	
+	size: 3,
+	hasPower: true,
+	
+});
+
+koriumBatteryLarge.consumes.powerBuffered(105000);
+koriumbatteryLarge.requirements = ItemStack.with(korium, 150, Items.lead, 80);

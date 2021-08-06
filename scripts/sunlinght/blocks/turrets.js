@@ -7,7 +7,7 @@ const zeus1 = extendContent(PowerTurret, "zeus-1", {
 	
 	shootType: extend(LightningBulletType, {
         damage: 30,
-        lightningLength: 30,
+        lightningLength: 325,
         collidesAir: false,
         ammoMultiplier: 1,
     }),
@@ -18,7 +18,7 @@ const zeus1 = extendContent(PowerTurret, "zeus-1", {
 	powerUse: 5.4,
 	targetAir: false,
 	targetGround: true,
-	range: 165,
+	range: 150,
 	shootEffect: Fx.lightningShoot,
     heatColor: Color.red,
     recoilAmount: 1,
@@ -44,7 +44,7 @@ const zeus2 = extendContent(PowerTurret, "zeus-2", {
 	
 	shootType: extend(LightningBulletType, {
         damage: 45,
-        lightningLength: 35,
+        lightningLength: 31,
         collidesAir: true,
         ammoMultiplier: 1,
 		lightningColor: Color.valueOf("#8276a6"),
@@ -56,7 +56,7 @@ const zeus2 = extendContent(PowerTurret, "zeus-2", {
 	powerUse: 6.1,
 	targetAir: true,
 	targetGround: true,
-	range: 170,
+	range: 168,
 	shootEffect: Fx.lightningShoot,
     heatColor: Color.red,
     recoilAmount: 1,
