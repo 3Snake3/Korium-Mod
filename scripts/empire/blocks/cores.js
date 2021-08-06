@@ -10,7 +10,7 @@ const coreStar = extendContent(CoreBlock, "core-star", {
     category: Category.effect,
     buildVisibility: BuildVisibility.shown,
 
-    size: 4,
+    size: 3,
     health: 4800,
     itemCapacity: 9500,
     unitType: UnitTypes.gamma,//TODO mod unit
