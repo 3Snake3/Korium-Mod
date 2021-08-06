@@ -10,14 +10,14 @@ const coreStar = extendContent(CoreBlock, "core-star", {
     category: Category.effect,
     buildVisibility: BuildVisibility.shown,
 
-    size: 3,
+    size: 4,
     health: 4800,
     itemCapacity: 9500,
     unitType: UnitTypes.gamma,//TODO mod unit
     unitCapModifier: 16,
     researchCostMultiplier: 0.08,
 
-    thrusterLenght: 35/4,
+    thrusterLenght: 34/4,
 
 });
 
