@@ -1,3 +1,8 @@
+
+const siron = Vars.content.getByName(ContentType.item, "koriummod-siron");
+const procionit = Vars.content.getByName(ContentType.liquid, "koriummod-procionit");
+const kapronit = Vars.content.getByName(ContentType.item, "koriummod-kapronit");
+
 //FUNCTIONS////////////////////////////////////////////////////////////////////////////
 
 function newFloor(name, realName, variants, speedMultiplier, emitLight, lightRadius, lightColor){
@@ -74,18 +79,52 @@ function newPine(name, realName, variants){
 
 const koriumBlock = newBlock("korium-block", "Korium Block", 2);
 const koriumBoulder = newBoulder("korium-boulder", "Korium Boulder", 2);
-const koriumFloor = newFloor("korium-floor", "Korium Floor", 1, 1.0, false, 0, 0);
+const koriumFloor = newFloor("korium-floor", "Korium Floor", 3, 1.0, false, 0, 0);
 koriumFloor.asFloor().wall = koriumBlock;
 koriumFloor.asFloor().decoration = koriumBoulder;
 
+
 const procionitBlock = newBlock("procionit-block", "Procionit Block", 1);
 const procionitIce = newFloor("procionit-ice", "Procionit Ice", 3, 0.9, false, 0, 0);
-const liquidProcionit = newLiquidFloor("liquid-procionit", "Liquid Procionit", 0, 0.15, true);
+
+const liquidProcionit = newLiquidFloor("liquid-procionit", "Liquid Procionit", 0, 0.20, true);
   liquidProcionit.cacheLayer = CacheLayer.tar;
-  liquidProcionit.liquidDrop = Vars.content.getByName(ContentType.liquid, "koriummod-procionit");
+  liquidProcionit.liquidDrop = procionit;
   liquidProcionit.emitLight = true;
-  liquidProcionit.lightRadius = 35;
-  liquidProcionit.lightColor = Color.valueOf("#686a9d");
-const procionitUnits = newBlock("prociont-units", "Units in Procionit", 0);
+  liquidProcionit.lightRadius = 31;
+  liquidProcionit.lightColor = Color.valueOf("#534660");
+  liquidProcionit.status = StatusEffects.melting;
+  liquidProcionit.statusDuration = 240;
+  
+const procionitUnits = newBlock("procionit-units", "Units in Procionit", 1);
 
 //const darkProcionitBlock = newBlock();
+
+//ORES
+
+const oreSiron = extensContent(OreBlock, "ore-siron", {
+	
+	localizedName: "Ore Siron",
+	itemDrop: siron,
+	
+	oreThreshold: 0.889,
+    oreScale: 25.550152,
+	
+});
+
+const oreKapronit = extensContent(OreBlock, "ore-kapronit", {
+	
+	localizedName: "Ore Kapronit",
+	itemDrop: kapronit,
+	
+	oreThreshold: 0.872,
+    oreScale: 24.720340,
+	
+});
+
+const oreKorium = extensContent(OreBlock, "ore-korium", {
+	
+	localizedName: "Ore Korium",
+	itemDrop: korium,
+	
+});

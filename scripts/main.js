@@ -20,6 +20,7 @@ require("vanillaContent/environment");
     // empire //
 	
     require("empire/blocks/cores");
+	require("empire/blocks/distribution");
     require("empire/blocks/defense");
 	
 ////// OTHER //////
