@@ -2,6 +2,7 @@
 const siron = Vars.content.getByName(ContentType.item, "koriummod-siron");
 const procionit = Vars.content.getByName(ContentType.liquid, "koriummod-procionit");
 const kapronit = Vars.content.getByName(ContentType.item, "koriummod-kapronit");
+const korium = Vars.content.getByName(ContentType.item, "koriummod-korium");
 
 //FUNCTIONS////////////////////////////////////////////////////////////////////////////
 
