@@ -115,7 +115,7 @@ const oreSiron = extendContent(OreBlock, "oreSiron", {
 
 const orekapronite = extendContent(OreBlock, "oreKapronite", {
 	
-	localizedName: "Ore kapronite",
+	localizedName: "Ore Kapronite",
 	itemDrop: kapronite,
 	
 	oreThreshold: 0.872,
