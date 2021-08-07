@@ -30,7 +30,7 @@ const kapronitRouter = extendContent(Router, "kapronit-router", {
 
 kapronitRouter.requirements = ItemStack.with(kapronit, 12);
 
-kapronitUnloader = extendContent(Unloader, "kapronit-unloader", {//THIIIS IS STOOOOOOOOOORAAAAGEEEEEEEEEE NO DISTRIBUTION!!!!!!
+const kapronitUnloader = extendContent(Unloader, "kapronit-unloader", {//THIIIS IS STOOOOOOOOOORAAAAGEEEEEEEEEE NO DISTRIBUTION!!!!!!
 
 	localizedName: "Kapronit unloader",
 	category: Category.effect,
