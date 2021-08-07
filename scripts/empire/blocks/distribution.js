@@ -24,7 +24,7 @@ const kapronitRouter = extendContent(Router, "kapronit-router", {
 	
 	health: 85,
 	speed: 7.1,//YESS SLOWLY
-	buildCostMultiplier = 2,
+	buildCostMultiplier: 2,
 
 });
 
