@@ -10,7 +10,7 @@ const kapronitConveyor = extendContent(ArmoredConveyor, "kapronit-conveyor", {
 	
 	health: 210,
 	speed: 0.06,
-	displayedSpeed: 8.25;
+	displayedSpeed: 8.25,
 	
 });
 
@@ -24,7 +24,7 @@ const kapronitRouter = extendContent(Router, "kapronit-router", {
 	
 	health: 85,
 	speed: 7.1,//YESS SLOWLY
-	buildCostMultiplier = 2;
+	buildCostMultiplier = 2,
 
 });
 
