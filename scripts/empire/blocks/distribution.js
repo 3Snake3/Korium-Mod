@@ -58,4 +58,4 @@ const omnidiumBridge = extendContent(BufferedItemBridge, "omnidium-conveyor", {
 
 });
 
-omnidiumConveyor.requirements = ItemStack.with(omnidium, 10, Items.lead, 8);
+omnidiumBridge.requirements = ItemStack.with(omnidium, 10, Items.lead, 8);
