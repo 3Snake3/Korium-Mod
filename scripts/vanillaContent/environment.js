@@ -102,7 +102,7 @@ const procionitUnits = newBlock("procionit-units", "Units in Procionit", 1);
 
 //ORES
 
-const oreSiron = extensContent(OreBlock, "ore-siron", {
+const oreSiron = extendContent(OreBlock, "ore-siron", {
 	
 	localizedName: "Ore Siron",
 	itemDrop: siron,
@@ -112,7 +112,7 @@ const oreSiron = extensContent(OreBlock, "ore-siron", {
 	
 });
 
-const oreKapronit = extensContent(OreBlock, "ore-kapronit", {
+const oreKapronit = extendContent(OreBlock, "ore-kapronit", {
 	
 	localizedName: "Ore Kapronit",
 	itemDrop: kapronit,
@@ -122,7 +122,7 @@ const oreKapronit = extensContent(OreBlock, "ore-kapronit", {
 	
 });
 
-const oreKorium = extensContent(OreBlock, "ore-korium", {
+const oreKorium = extendContent(OreBlock, "ore-korium", {
 	
 	localizedName: "Ore Korium",
 	itemDrop: korium,
