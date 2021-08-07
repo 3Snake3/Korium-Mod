@@ -1,10 +1,10 @@
 const siron = Vars.content.getByName(ContentType.item, "koriummod-siron");
-const kapronit = Vars.content.getByName(ContentType.item, "koriummod-kapronit");
+const kapronite = Vars.content.getByName(ContentType.item, "koriummod-kapronite");
 const omnidium = Vars.content.getByName(ContentType.item, "koriummod-omnidium");
 
-const kapronitConveyor = extendContent(ArmoredConveyor, "kapronit-conveyor", {
+const kaproniteConveyor = extendContent(ArmoredConveyor, "kapronite-conveyor", {
 	
-	localizedName: "Kapronit conveyor",
+	localizedName: "kapronite conveyor",
 	category: Category.distribution,
 	buildVisibility: BuildVisibility.shown,
 	
@@ -14,11 +14,11 @@ const kapronitConveyor = extendContent(ArmoredConveyor, "kapronit-conveyor", {
 	
 });
 
-kapronitConveyor.requirements = ItemStack.with(kapronit, 1, Items.thorium, 1, Items.metaglass, 1);
+kaproniteConveyor.requirements = ItemStack.with(kapronite, 1, Items.thorium, 1, Items.metaglass, 1);
 
-const kapronitRouter = extendContent(Router, "kapronit-router", {
+const kaproniteRouter = extendContent(Router, "kapronite-router", {
 	
-	localizedName: "Kapronit conveyor",
+	localizedName: "kapronite conveyor",
 	category: Category.distribution,
 	buildVisibility: BuildVisibility.shown,	
 	
@@ -28,11 +28,11 @@ const kapronitRouter = extendContent(Router, "kapronit-router", {
 
 });
 
-kapronitRouter.requirements = ItemStack.with(kapronit, 12);
+kaproniteRouter.requirements = ItemStack.with(kapronite, 12);
 
-const kapronitUnloader = extendContent(Unloader, "kapronit-unloader", {//THIIIS IS STOOOOOOOOOORAAAAGEEEEEEEEEE NO DISTRIBUTION!!!!!!
+const kaproniteUnloader = extendContent(Unloader, "kapronite-unloader", {//THIIIS IS STOOOOOOOOOORAAAAGEEEEEEEEEE NO DISTRIBUTION!!!!!!
 
-	localizedName: "Kapronit unloader",
+	localizedName: "kapronite unloader",
 	category: Category.effect,
 	buildVisibility: BuildVisibility.shown,
 
@@ -41,7 +41,7 @@ const kapronitUnloader = extendContent(Unloader, "kapronit-unloader", {//THIIIS 
 	
 });
 
-kapronitUnloader.requirements = ItemStack.with(kapronite, 35, Items.silicon, 25);
+kaproniteUnloader.requirements = ItemStack.with(kapronite, 35, Items.silicon, 25);
 
 const omnidiumBridge = extendContent(BufferedItemBridge, "omnidium-conveyor", {
 

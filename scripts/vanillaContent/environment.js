@@ -1,7 +1,7 @@
 
 const siron = Vars.content.getByName(ContentType.item, "koriummod-siron");
 const procionit = Vars.content.getByName(ContentType.liquid, "koriummod-procionit");
-const kapronit = Vars.content.getByName(ContentType.item, "koriummod-kapronit");
+const kapronite = Vars.content.getByName(ContentType.item, "koriummod-kapronite");
 const korium = Vars.content.getByName(ContentType.item, "koriummod-korium");
 
 //FUNCTIONS////////////////////////////////////////////////////////////////////////////
@@ -113,10 +113,10 @@ const oreSiron = extendContent(OreBlock, "ore-siron", {
 	
 });
 
-const oreKapronit = extendContent(OreBlock, "ore-kapronit", {
+const orekapronite = extendContent(OreBlock, "ore-kapronite", {
 	
-	localizedName: "Ore Kapronit",
-	itemDrop: kapronit,
+	localizedName: "Ore kapronite",
+	itemDrop: kapronite,
 	
 	oreThreshold: 0.872,
     oreScale: 24.720340,
