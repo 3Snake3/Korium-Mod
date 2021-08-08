@@ -25,38 +25,6 @@ const coreFlickering = extendContent(CoreBlock, "core-flickering", {
 
 coreFlickering.requirements = ItemStack.with(Items.copper, 1500, siron, 1000, Items.graphite, 500, Items.lead, 200);
 
-coreFlickering.buildType = () => {
-    const b = extendContent(CoreBlock.CoreBuild, coreFlickering, {
-		
-    buildConfiguration(table){
-		
-	    table.button(Icon.eye-off, () => {
-			
-			var canUse = true;
-			
-			if(canUse){
-				canUse = false;
-			    
-				coreFlickering.targetable = false;
-				
-				Time.run(invisibleTime,()=>{
-					coreFlickering.targetable = true;
-				});
-				
-				Time.run(invisibleReloadTime,()=>{
-					canUse = true;
-				});
-			}
-			
-		}).size(40);
-	}
-		
-	//effects(){},
-			
-});
-return b;
-};
-
 //CORE STAR
 
 const coreStar = extendContent(CoreBlock, "core-star", {
@@ -79,6 +47,36 @@ const coreStar = extendContent(CoreBlock, "core-star", {
 });
 
 coreStar.requirements = ItemStack.with(Items.copper, 2000, siron, 3000, Items.graphite, 1000, Items.silicon, 2000);
+
+coreStar.buildType = () => {
+    const b = extendContent(CoreBlock.CoreBuild, coreStar, {
+		
+    buildConfiguration(table){
+		
+	    table.button(Icon.eye-off, () => {
+			
+			var canUse = true;
+			
+			if(canUse){
+				canUse = false;
+			    
+				coreStar.targetable = false;
+				
+				Time.run(invisibleTime,()=>{
+					coreStar.targetable = true;
+				});
+				
+				Time.run(invisibleReloadTime,()=>{
+					canUse = true;
+				});
+			}
+			
+		}).size(40);
+	}
+			
+    });
+    return b;
+};
 
 //KAPRONITE UNLOADER
 
