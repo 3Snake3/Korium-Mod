@@ -41,6 +41,7 @@ const coreStar = extendContent(CoreBlock, "core-star", {
     unitType: UnitTypes.gamma,//TODO mod unit
     unitCapModifier: 16,
     researchCostMultiplier: 0.08,
+	configurable: true,
 
     thrusterLenght: 34/4,
 
@@ -53,7 +54,7 @@ coreStar.buildType = () => {
 		
     buildConfiguration(table){
 		
-	    table.button(Icon.eye-off, () => {
+	    table.button(Icon.eye, () => {
 			
 			var canUse = true;
 			
