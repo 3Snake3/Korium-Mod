@@ -25,7 +25,8 @@ const coreFlickering = extendContent(CoreBlock, "core-flickering", {
 
 coreFlickering.requirements = ItemStack.with(Items.copper, 1500, siron, 1000, Items.graphite, 500, Items.lead, 200);
 
-coreFlickering.buildType = extendContent(CoreBlock.CoreBuild, coreFlickering, {
+coreFlickering.buildType = () => {
+    const b = extendContent(CoreBlock.CoreBuild, coreFlickering, {
 		
     buildConfiguration(table){
 		
@@ -53,6 +54,8 @@ coreFlickering.buildType = extendContent(CoreBlock.CoreBuild, coreFlickering, {
 	//effects(){},
 			
 });
+return b;
+};
 
 //CORE STAR
 
