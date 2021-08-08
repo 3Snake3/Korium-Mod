@@ -72,7 +72,7 @@ coreStar.buildType = () => {
 				});
 			}
 			
-		}).size(70);
+		}).size(40);
 	},
 	
 	placed(){
@@ -87,6 +87,9 @@ coreStar.buildType = () => {
 				canUse = false;
 			    
 				coreStar.targetable = false;
+				coreStar.captureInvicibility = 0;
+				coreStar.priority = TargetPriority.base;
+				coreStar.flags = EnumSet.of(BlockFlag.factory);
 				
 				Time.run(invisibleTime,()=>{
 					coreStar.targetable = true;
@@ -97,7 +100,7 @@ coreStar.buildType = () => {
 				});
 			}
 			
-		}).size(70);
+		}).size(40);
     }
 			
     });
