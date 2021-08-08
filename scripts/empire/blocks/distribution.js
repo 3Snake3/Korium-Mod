@@ -30,19 +30,6 @@ const kaproniteRouter = extendContent(Router, "kapronite-router", {
 
 kaproniteRouter.requirements = ItemStack.with(kapronite, 12);
 
-const kaproniteUnloader = extendContent(Unloader, "kapronite-unloader", {//THIIIS IS STOOOOOOOOOORAAAAGEEEEEEEEEE NO DISTRIBUTION!!!!!!
-
-	localizedName: "kapronite unloader",
-	category: Category.effect,
-	buildVisibility: BuildVisibility.shown,
-
-    speed: 5.40,//HMMMMMMMMMMMMMM
-    group: BlockGroup.transportation,
-	
-});
-
-kaproniteUnloader.requirements = ItemStack.with(kapronite, 35, Items.silicon, 25);
-
 const omnidiumBridge = extendContent(BufferedItemBridge, "omnidium-conveyor", {
 
     localizedName: "Omnidium brige conveyor",
