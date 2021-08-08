@@ -71,8 +71,33 @@ coreStar.buildType = () => {
 				});
 			}
 			
-		}).size(40);
-	}
+		}).size(70);
+	},
+	
+	placed(){
+        this.super.placed();
+        Vars.state.teams.registerCore(this);
+		
+	    table.button(Icon.eye-off, () => {
+			
+			var canUse = true;
+			
+			if(canUse){
+				canUse = false;
+			    
+				coreStar.targetable = false;
+				
+				Time.run(invisibleTime,()=>{
+					coreStar.targetable = true;
+				});
+				
+				Time.run(invisibleReloadTime,()=>{
+					canUse = true;
+				});
+			}
+			
+		}).size(70);
+    }
 			
     });
     return b;
