@@ -1,14 +1,3 @@
-const korium = koriummod-korium;
-const siron = koriummod-siron;
-const norium = koriummod-norium;
-
-function node(parent2, block, requirements, objectives){
-	var parent = TechTree.all.find(node => node.content == parent2);
-	var node = new TechTree.TechNode(parent, block, requirements);
-	
-	node.objectives.add(objectives);
-}; 
-
 //WALLS
 
 function newWall(name, health, size, item, colich, liCha, liDam, liLength, liColor){
