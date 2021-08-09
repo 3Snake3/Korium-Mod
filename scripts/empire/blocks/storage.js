@@ -1,8 +1,8 @@
 const siron = Vars.content.getByName(ContentType.item, "koriummod-siron");
 const kapronite = Vars.content.getByName(ContentType.item, "koriummod-kapronite");
 
-const invisibleTime = 60*4;
-const invisibleReloadTime = 60 * 10;
+const protectionTime = 60*10;
+const protectionReloadTime = 60 * 20;
 
 
 //CORE FLICKERING
@@ -52,6 +52,8 @@ coreStar.requirements = ItemStack.with(Items.copper, 2000, siron, 3000, Items.gr
 coreStar.buildType = () => {
     const b = extendContent(CoreBlock.CoreBuild, coreStar, {
 		
+	protection: false,
+		
     buildConfiguration(table){
 		
 	    table.button(Icon.eye, () => {
@@ -60,14 +62,14 @@ coreStar.buildType = () => {
 			
 			if(canUse){
 				canUse = false;
-			    
-				coreStar.targetable = false;
+				this.protection = true;
 				
-				Time.run(invisibleTime,()=>{
-					coreStar.targetable = true;
+				Time.run(protectionTime,()=>{
+                    this.protection = false;
 				});
 				
-				Time.run(invisibleReloadTime,()=>{
+				
+				Time.run(protectionReloadTime,()=>{
 					canUse = true;
 				});
 			}
@@ -75,33 +77,16 @@ coreStar.buildType = () => {
 		}).size(40);
 	},
 	
-	placed(){
-        this.super.placed();
-        Vars.state.teams.registerCore(this);
-		
-	    table.button(Icon.eye-off, () => {
-			
-			var canUse = true;
-			
-			if(canUse){
-				canUse = false;
-			    
-				coreStar.targetable = false;
-				coreStar.captureInvicibility = 0;
-				coreStar.priority = TargetPriority.base;
-				coreStar.flags = EnumSet.of(BlockFlag.factory);
-				
-				Time.run(invisibleTime,()=>{
-					coreStar.targetable = true;
-				});
-				
-				Time.run(invisibleReloadTime,()=>{
-					canUse = true;
-				});
+	/*
+	damage(source, damage){
+
+			if(this.protection){
+				this.super$damage(source, damage/5.0)
+			}else{
+				this.super$damage(source, damage)
 			}
-			
-		}).size(40);
     }
+	*/
 			
     });
     return b;
