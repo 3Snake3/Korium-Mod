@@ -9,7 +9,7 @@ const omnidiumGroundFactory = extendContent(UnitFactory, "omnidium-ground-factor
 	localizedName: "Omnidium ground factory",
     description: "---",
 	
-	category: Category.units,
+	//category: Category.units,
     buildVisibility: BuildVisibility.shown,
 	
 	size: 3,
