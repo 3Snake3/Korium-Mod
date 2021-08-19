@@ -6,7 +6,7 @@ require("items");
 require("liquids");
 
 require("vanillaContent/environment");
-require("vanillaContent/weathers");
+//require("vanillaContent/weathers");
 
 //require("blocks/siron shield");
 
@@ -21,11 +21,13 @@ require("vanillaContent/weathers");
 
     // empire //
 	
+	//require("empire/units/swordTree");
+	
     require("empire/blocks/storage");
 	require("empire/blocks/distribution");
     require("empire/blocks/defense");
 	require("empire/blocks/turrets");
-	//require("empire/blocks/units");
+	require("empire/blocks/units");
 	
 ////// OTHER //////
 
