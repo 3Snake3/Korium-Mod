@@ -13,6 +13,6 @@ sword.weapons.add(
             top: false,
             ejectEffect: Fx.casing1,
             bullet: Bullets.standardCopper,
-    });
+    })
 );
 
