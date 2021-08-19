@@ -21,7 +21,7 @@ require("vanillaContent/environment");
 
     // empire //
 	
-	//require("empire/units/swordTree");
+	require("empire/units/swordTree");
 	
     require("empire/blocks/storage");
 	require("empire/blocks/distribution");
