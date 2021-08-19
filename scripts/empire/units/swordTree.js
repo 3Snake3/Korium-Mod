@@ -1,5 +1,9 @@
 
 const sword = extendContent(UnitType, "sword", {
+	
+    localizedName: "Sword",
+    description: "---",
+	
     speed: 0.55,
     hitSize: 9,
     health: 320,

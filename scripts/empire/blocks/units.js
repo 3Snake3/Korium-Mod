@@ -21,4 +21,4 @@ omnidiumGroundFactory.plans = Seq.with(
     new UnitPlan(sword, 60 * 24, ItemStack.with(omnidium, 20, siron, 15)),
 );
 
-omnidiumGroundFactory.consumes.power(3.2),
+omnidiumGroundFactory.consumes.power(3.2);
