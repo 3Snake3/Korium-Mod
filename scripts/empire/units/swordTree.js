@@ -6,6 +6,7 @@ const sword = extendContent(UnitType, "sword", {
     speed: 0.55,
     hitSize: 9,
     health: 320,
+	allowLegStep: false,
 })
 
 sword.weapons.add(
