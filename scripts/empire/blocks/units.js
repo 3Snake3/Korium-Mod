@@ -4,6 +4,8 @@ const kapronite = Vars.content.getByName(ContentType.item, "koriummod-kapronite"
 
 const sword = Vars.content.getByName(ContentType.unit, "koriummod-sword");
 
+const plan = 
+
 const omnidiumGroundFactory = extendContent(UnitFactory, "omnidium-ground-factory", {
 		
 	localizedName: "Omnidium ground factory",
@@ -15,9 +17,15 @@ const omnidiumGroundFactory = extendContent(UnitFactory, "omnidium-ground-factor
 	size: 3,
 	
 	plans: Seq.with(
-        new UnitPlan(sword, 60 * 24, ItemStack.with(omnidium, 20, siron, 15)),
+	    {
+			unit: sword,
+			time: 60 * 24,
+			requirements: ItemStack.with(omnidium, 20, siron, 15),
+		}
     ),
 });
 
 omnidiumGroundFactory.requirements = ItemStack.with(kapronite, 120, omnidium, 80, Items.titanium, 50);
 omnidiumGroundFactory.consumes.power(3.2);
+
+//new UnitPlan(sword, 60 * 24, ItemStack.with(omnidium, 20, siron, 15)),
