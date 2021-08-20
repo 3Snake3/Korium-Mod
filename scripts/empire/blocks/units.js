@@ -4,8 +4,6 @@ const kapronite = Vars.content.getByName(ContentType.item, "koriummod-kapronite"
 
 const sword = Vars.content.getByName(ContentType.unit, "koriummod-sword");
 
-const plan = 
-
 const omnidiumGroundFactory = extendContent(UnitFactory, "omnidium-ground-factory", {
 		
 	localizedName: "Omnidium ground factory",
