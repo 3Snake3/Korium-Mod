@@ -13,12 +13,11 @@ const omnidiumGroundFactory = extendContent(UnitFactory, "omnidium-ground-factor
     buildVisibility: BuildVisibility.shown,
 	
 	size: 3,
+	
+	plans: Seq.with(
+        new UnitPlan(sword, 60 * 24, ItemStack.with(omnidium, 20, siron, 15)),
+    ),
 });
 
 omnidiumGroundFactory.requirements = ItemStack.with(kapronite, 120, omnidium, 80, Items.titanium, 50);
-
-omnidiumGroundFactory.plans = Seq.with(
-    new UnitFactory.UnitPlan(sword, 60 * 24, ItemStack.with(omnidium, 20, siron, 15)),
-);
-
 omnidiumGroundFactory.consumes.power(3.2);
