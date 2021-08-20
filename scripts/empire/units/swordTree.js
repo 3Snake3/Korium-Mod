@@ -20,6 +20,6 @@ sword.weapons.add(
 )
 
 sword.constructor = () => {
-const entity = extend(UnitComp, {});
+const entity = extend(Unit, {});
 return entity;
 }
