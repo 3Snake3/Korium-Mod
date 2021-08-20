@@ -23,11 +23,12 @@ require("vanillaContent/environment");
 	
 	require("empire/units/swordTree");
 	
+	require("empire/blocks/units");
+	
     require("empire/blocks/storage");
 	require("empire/blocks/distribution");
     require("empire/blocks/defense");
 	require("empire/blocks/turrets");
-	require("empire/blocks/units");
 	
 ////// OTHER //////
 

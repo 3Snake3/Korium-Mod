@@ -1,4 +1,3 @@
-
 const sword = extendContent(UnitType, "sword", {
 	
     localizedName: "Sword",
@@ -7,7 +6,7 @@ const sword = extendContent(UnitType, "sword", {
     speed: 0.55,
     hitSize: 9,
     health: 320,
-});
+})
 
 sword.weapons.add(
     extendContent(Weapon, "sword-weapon", {
@@ -18,5 +17,4 @@ sword.weapons.add(
             ejectEffect: Fx.casing1,
             bullet: Bullets.standardCopper,
     })
-);
-
+)
