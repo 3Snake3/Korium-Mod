@@ -18,3 +18,8 @@ sword.weapons.add(
             bullet: Bullets.standardCopper,
     })
 )
+
+sword.consturctor = () => {
+const entity = extend(UnitComp, {});
+return entity;
+}
