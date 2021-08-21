@@ -10,7 +10,7 @@ const sword = extendContent(UnitType, "sword", {
     health: 320,
 })
 
-sword.constructor = () => extend(MechUnit, {});
+sword.constructor = () => extend(MechUnit, {})
 
 sword.weapons.add(
 
