@@ -24,6 +24,8 @@ sword.weapons.add(
     })
 )
 
+sword.constructor = () => extend(MechUnit, {});
+
 //const sword = Vars.content.getByName(ContentType.unit, "koriummod-sword");
 
 const omnidiumGroundFactory = extendContent(UnitFactory, "omnidium-ground-factory", {
