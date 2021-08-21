@@ -21,6 +21,5 @@ sword.weapons.add(
 )
 
 sword.constructor = () => { 
-	const unit = extendContent(MechComp, {});
-	return unit
+	EntityMapping.map("sword");
 }
