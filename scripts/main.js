@@ -33,6 +33,6 @@ require("vanillaContent/environment");
 ////// OTHER //////
 
 
-//require("planets/korin");
+require("planets/korin");
 require("techTree");
 
