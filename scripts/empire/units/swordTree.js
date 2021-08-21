@@ -1,3 +1,4 @@
+/*
 const sword = extendContent(UnitType, "sword", {
 	
     localizedName: "Sword",
@@ -19,7 +20,4 @@ sword.weapons.add(
             bullet: Bullets.standardCopper,
     })
 )
-
-sword.constructor = () => { 
-	EntityMapping.map("sword");
-}
+*/
