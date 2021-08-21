@@ -21,6 +21,6 @@ sword.weapons.add(
 )
 
 sword.constructor = () => { 
-	const unit = extendContent(Unitc, {});
+	const unit = extendContent(MechComp, {});
 	return unit
 }
