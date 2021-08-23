@@ -55,6 +55,14 @@ koriumWall.buildType = () => {
         },
 	
 	    display(table){
+			
+			table.table(cons(t => {
+                t.left();
+                t.add(new Image(this.block.getDisplayIcon(this.tile))).size(8 * 4);
+                t.labelWrap(this.block.getDisplayName(this.tile)).left().width(190).padLeft(5);
+            })).growX().left();
+            table.row();
+			
 			table.table(cons(bars => {
                 bars.defaults().growX().height(18).pad(4);
 
