@@ -56,6 +56,8 @@ koriumWall.buildType = () => {
 	
 	    display(table){
 			
+			    getBARS();
+			
                 table.table(cons(t => {
                     t.left();
                     t.add(new Image(this.block.getDisplayIcon(this.tile))).size(8 * 4);
