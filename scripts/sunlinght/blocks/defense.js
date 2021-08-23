@@ -19,7 +19,7 @@ function ChargingWall(name, maxChargeStages, requiredCharge, stageUpgradeMultipl
 				
 				this.charge += damage / 10;
 				
-				checkStages();
+				this.checkStages();
 				
                 print("Special damage (" + damage + "), ");
 		        this.super$damage(damage);
