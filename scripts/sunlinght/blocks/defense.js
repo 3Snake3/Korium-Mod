@@ -48,8 +48,8 @@ koriumWall.buildType = () => {
 		init(){
             this.getBARS();
             
-            this.maxHealth = this.koriumWall().maxHealth;
-            //this.health = this.koriumWall().consHealth;
+            this.maxHealth = koriumWall.maxHealth;
+            //this.health = koriumWall.health;
             
             return this.super$init();
         },
