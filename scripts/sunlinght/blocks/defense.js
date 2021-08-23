@@ -56,24 +56,51 @@ koriumWall.buildType = () => {
 	
 	    display(table){
 			
-			table.table(cons(t => {
-                t.left();
-                t.add(new Image(this.block.getDisplayIcon(this.tile))).size(8 * 4);
-                t.labelWrap(this.block.getDisplayName(this.tile)).left().width(190).padLeft(5);
-            })).growX().left();
-            table.row();
-			
-			table.table(cons(bars => {
-                bars.defaults().growX().height(18).pad(4);
-
-                this.cbars.each(bar => {
-                    table.add(bar).growX();
-                    table.row();
-                });
-
-            })).growX();
-            table.row();
-		},
+                table.table(cons(t => {
+                    t.left();
+                    t.add(new Image(this.block.getDisplayIcon(this.tile))).size(8 * 4);
+                    t.labelWrap(this.block.getDisplayName(this.tile)).left().width(190).padLeft(5);
+                })).growX().left();
+                table.row();
+                
+                table.table(cons(bars => {
+                    bars.defaults().growX().height(18).pad(4);
+                    this.displayCbars(bars);
+                })).growX();
+                table.row();
+                
+                let charge = this.charge;
+                let chargePhase = this.charge;//TODO
+                
+                table.table(cons(t => {
+                    const rebuild = new RunnableAction();
+                    rebuild.setRunnable(() => {
+                        t.clearChildren();
+                        t.left();
+                        
+                        t.add(Core.bundle.format("korium-wall-charge", charge)).left();
+                        t.row();
+                        
+//                        t.table(cons(t2 => {
+//                            t2.left();
+//                                
+//                            t2.add(new Image(itemf.item.icon(Cicon.small)));
+//                            t2.labelWrap(amount + " / " + itemf.amount).left().width(190).padLeft(5);
+//                        })).left();
+                    });
+                    
+                rebuild.run();
+//                t.update(() => {
+//                        amount = this.items != null ? this.items.get(itemf.item) : 0;
+//                        itemf = this.phaseReq(this.phase);
+//                        phase = this.phase;
+//                            
+//                        rebuild.run();
+//                });
+            })).padTop(12).growX().left();
+                
+            table.marginBottom(-5);
+        },
 		
 		getBARS(){
 			this.cbars = new Seq();
@@ -84,6 +111,13 @@ koriumWall.buildType = () => {
 		
 		healthcf(){
             return this.health / this.maxHealth;
+        },
+		
+		displayCbars(table){
+            this.cbars.each(bar => {
+                table.add(bar).growX();
+                table.row();
+            });
         },
 	});
 	return ent;
@@ -98,3 +132,5 @@ const koriumWallLarge = newWall("korium-wall-large", "Large Korium wall", 1640, 
     koriumWallLarge.requirements = ItemStack.with(korium, 24);
 	setLightning(koriumWallLarge);
 */
+
+
