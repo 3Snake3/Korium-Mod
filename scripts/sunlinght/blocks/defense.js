@@ -1,21 +1,15 @@
 const korium = Vars.content.getByName(ContentType.item, "koriummod-korium");
 
-function newWall(name, realName, health, size){
+class chargingWall extends Wall{
 	
-    const wall = extendContent(Wall, name, {
+	chargeStages = 1;
+	
+	constructor(name, chargeStages){
+		super(name);
 		
-		localizedName: realName,
-		buildVisibility: BuildVisibility.shown,
-		category: Category.defense,
-		
-	    size: size,
-	    health: health,
-		
-	});
-
-    return wall;
-};
-
+		this.chargeStages = chargeStages;
+	}
+}
 function setLightning(obj){
     obj.insulated = true;
     obj.absorbLasers = true;
@@ -36,6 +30,7 @@ const koriumWall = extendContent(Wall, "korium-wall", {
 		
 	size: 1,
 	health: 410,
+	configurable: true,
 	
     requirements: ItemStack.with(korium, 6),
 });
