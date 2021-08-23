@@ -127,7 +127,7 @@ koriumWall.buildType = () => {
 	return ent;
 };
 
-setLightning(koriumWall);
+//setLightning(koriumWall);
 	
 //////////////////////////////////////////////////////////////////////////////////
 	
