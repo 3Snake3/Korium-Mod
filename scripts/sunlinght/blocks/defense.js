@@ -43,7 +43,7 @@ const koriumWall = extendContent(Wall, "korium-wall", {
 koriumWall.buildType = () => {
 	const ent = extendContent(Wall.WallBuild, koriumWall, {
     
-	    charge: 0,
+	    charge: 1,
 		
 		init(){
             this.getBARS();
@@ -55,6 +55,8 @@ koriumWall.buildType = () => {
         },
 	
 	    display(table){
+			
+			    this.super$display(table);
 			
 			    getBARS();
 			
