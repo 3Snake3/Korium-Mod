@@ -51,7 +51,7 @@ koriumWall.buildType = () => {
             this.maxHealth = 410;
             //this.health = koriumWall.health;
             
-            return this.super$init();
+            //return this.super$init();
         },
 	
 	    display(table){
