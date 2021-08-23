@@ -3,7 +3,7 @@ const korium = Vars.content.getByName(ContentType.item, "koriummod-korium");
 function ChargingWall(name, maxChargeStages, requiredCharge, stageUpgradeMultiplier, additionally){
 	
 	this = extendContent(Wall, name, additionally);
-	block = this;
+	const block = this;
 	
 	this.buildType = () => {
 		return extendContent(Wall.WallBuild, block, {
