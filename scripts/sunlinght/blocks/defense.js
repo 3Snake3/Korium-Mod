@@ -58,7 +58,7 @@ koriumWall.buildType = () => {
 			table.table(cons(bars => {
                 bars.defaults().growX().height(18).pad(4);
 
-                this.BARS.each(bar => {
+                this.cbars.each(bar => {
                     table.add(bar).growX();
                     table.row();
                 });
@@ -68,10 +68,10 @@ koriumWall.buildType = () => {
 		},
 		
 		getBARS(){
-			this.BARS = new Seq();
+			this.cbats = new Seq();
             
-            this.BARS.add(new Bar(Core.bundle.get("stat.health"), Pal.lancerLaser, floatp(() => this.healthcf())));
-            this.BARS.add(new Bar(Core.bundle.get("stat.charge"), Pal.accent, floatp(() => this.phasef())));
+            this.cbars.add(new Bar(Core.bundle.get("stat.health"), Pal.lancerLaser, floatp(() => this.healthcf())));
+            this.cbars.add(new Bar(Core.bundle.get("stat.charge"), Pal.accent, floatp(() => this.phasef())));
 		},
 	});
 	return ent;
