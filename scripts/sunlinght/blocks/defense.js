@@ -40,7 +40,7 @@ const koriumWall = extendContent(Wall, "korium-wall", {
     requirements: ItemStack.with(korium, 6),
 });
 
-korium.buildType = () => {
+koriumWall.buildType = () => {
 	const ent = extendContent(Wall.WallBuild, koriumWall, {
     
 	    charge: 0,
