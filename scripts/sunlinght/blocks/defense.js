@@ -37,9 +37,7 @@ const koriumWall = extendContent(Wall, "korium-wall", {
 	size: 1,
 	health: 410,
 	
-    koriumWall.requirements = ItemStack.with(korium, 6);
-	
-
+    requirements: ItemStack.with(korium, 6),
 });
 
 korium.buildType = () => {
