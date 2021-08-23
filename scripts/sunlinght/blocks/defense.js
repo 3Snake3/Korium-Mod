@@ -73,6 +73,10 @@ koriumWall.buildType = () => {
             this.cbars.add(new Bar(Core.bundle.get("stat.health"), Pal.lancerLaser, floatp(() => this.healthcf())));
             this.cbars.add(new Bar(Core.bundle.get("stat.charge"), Pal.accent, floatp(() => this.phasef())));
 		},
+		
+		healthcf(){
+            return this.health / this.maxHealth;
+        },
 	});
 	return ent;
 };
