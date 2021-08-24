@@ -89,8 +89,6 @@ const koriumWall = new ChargingWall("korium-wall", 5, 10, 1.3, {
     requirements: ItemStack.with(korium, 6),
 });
 
-
-
 //setLightning(koriumWall);
 	
 //////////////////////////////////////////////////////////////////////////////////
@@ -100,9 +98,3 @@ const koriumWallLarge = newWall("korium-wall-large", "Large Korium wall", 1640, 
     koriumWallLarge.requirements = ItemStack.with(korium, 24);
 	setLightning(koriumWallLarge);
 */
-
-
-
-
-
-
