@@ -98,7 +98,7 @@ const elysiumGenerator = extend(PlanetGenerator, {
                 let nscl = rand.random(100, 140);//hz
                 let stroke = rand.random(3, 9);//4, 12
                 
-                gend.brush(gend.pathfind(this.x, this.y, to.x, to.y, tile => (tile.solid() ? 5 : 0) + gend.noise(tile.x, tile.y, 2, 0.4, 1 / nscl) * 500, Astar.manhattan), stroke);
+                gend.brush(gend.pathfind(this.x, this.y, to.x, to.y, tile => (tile.solid() ? 50 : 0) + gend.noise(tile.x, tile.y, 2, 0.4, 1 / nscl) * 500, Astar.manhattan), stroke);
             }
         };
 		
@@ -162,14 +162,14 @@ const elysiumGenerator = extend(PlanetGenerator, {
             };
 
             if(waterTiles <= 4 || (i + angleStep >= 360)){
-                spawn = setRoom(cx, cy, rand.random(10, 18));
+                spawn = setRoom(cx, cy, rand.random(8, 15));
                 roomseq.add(spawn);
 
                 for(let j = 0; j < enemySpawns; j++){
                     let enemyOffset = rand.range(60);
                     
                     Tmp.v1.set(cx - this.width / 2, cy - this.height / 2).rotate(180 + enemyOffset).add(this.width / 2, this.height / 2);
-                    let espawn = setRoom(Math.floor(Tmp.v1.x), Math.floor(Tmp.v1.y), rand.random(10, 16));
+                    let espawn = setRoom(Math.floor(Tmp.v1.x), Math.floor(Tmp.v1.y), rand.random(8, 16));
                     roomseq.add(espawn);
                     enemies.add(espawn);
                 };
