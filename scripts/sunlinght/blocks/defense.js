@@ -1,19 +1,19 @@
 const korium = Vars.content.getByName(ContentType.item, "koriummod-korium");
 
-function ChargingWall(name, maxChargeStages, requiredCharge, stageUpgradeMultiplier, additionally){
+function ChargingWall(name, maxChargeStage, reqCharge, stageUpgradeMultiplier, additionally){
 	
-	this = extendContent(Wall, name, additionally);
-	const block = this;
+	this = extendContent(Wall, name, additionally)
+	let block = this;
 	
 	this.buildType = () => {
 		return extendContent(Wall.WallBuild, block, {
 			
 			charge: 0,
 			chargeStage: 1,
-			maxChargeStages: maxChargeStages,
+			maxChargeStages: maxChargeStage,
 			
 			upgradeMultiplier: stageUpgradeMultiplier,
-			requiredCharge: requiredCharge,
+			requiredCharge: reqCharge,
 			
 			damage(damage){
 				
@@ -27,15 +27,15 @@ function ChargingWall(name, maxChargeStages, requiredCharge, stageUpgradeMultipl
 			
 			checkStages(){
 				
-				if(this.chargeStage >= this.maxChargeStage){
-					this.chargeStage = this.maxChargeStage;
+				if(this.chargeStage > this.maxChargeStages){
+					this.chargeStage = this.maxChargeStages;
 				}else{
 					
 				    if(this.charge >= (this.requiredCharge * this.chargeStage)){
 						
 						this.charge = 0;
 						
-						if(!(this.chargeStage >= this.maxChargeStage)){
+						if(!(this.chargeStage >= this.maxChargeStages)){
 							this.chargeStage++;
 						    print("Update Charge Stage to" + this.chargeStage);
 						}
@@ -43,19 +43,19 @@ function ChargingWall(name, maxChargeStages, requiredCharge, stageUpgradeMultipl
 				}
 			},
 			
-		    onDestroyed(){
-			    this.super$onDestroyed();
-				
-				Sounds.spark.at(this.tile);
-
-                Damage.damage(this.x, this.y, this.upgradeMultiplier * this.chargeStage * tilesize, 10 * (this.upgradeMultiplier * this.chargeStage) * 4);
-
-                //Effect.shake(2, 5, this.x, this.y);
-                //explodeEffect.at(x, y);
-				
-                print("EXPLOSION OF THE " + this.chargeStage + " CHARGE STAGE WALL, ");
-			},
-		});
+//		      onDestroyed(){
+//			      this.super$onDestroyed();
+//				
+//				  Sounds.spark.at(this.tile);
+//
+//                Damage.damage(this.x, this.y, this.upgradeMultiplier * this.chargeStage * tilesize, 10 * (this.upgradeMultiplier * this.chargeStage) * 4);
+//
+//                //Effect.shake(2, 5, this.x, this.y);
+//                //explodeEffect.at(x, y);
+//				
+//                print("EXPLOSION OF THE " + this.chargeStage + " CHARGE STAGE WALL, ");
+//		  	  },
+		})
 	}
 }
 
