@@ -30,7 +30,7 @@ const elysiumGenerator = extend(PlanetGenerator, {
         tile.floor = this.getBlock(position);
         tile.block = tile.floor.asFloor().wall;
 
-        if(Ridged.noise3d(1, position.x, position.y, position.z, 2, 22) > 0.31){
+        if(Ridged.noise3d(1, position.x, position.y, position.z, 2, 22) > 0.32){//#31!!!
             tile.block = Blocks.air;
         };
     },
@@ -63,7 +63,7 @@ const elysiumGenerator = extend(PlanetGenerator, {
 	
 	noise(x, y, octaves, falloff, scl, mag){
         let v = this.sector.rect.project(x, y).scl(5);
-        return Simplex.noise3d(this.seed, octaves, falloff, 1 / scl, v.x, v.y, v.z) * mag;
+        return Simplex.noise3d(this.seed, octaves, falloff, 1 / scl, v.x, v.y, v.z) * mag;//OCTAVE NOISE??
     },
 	
 	generate(tiles, sec){
@@ -95,8 +95,8 @@ const elysiumGenerator = extend(PlanetGenerator, {
                 this.connected.add(to);
                 
                 //let gend = elysiumGenerator;
-                let nscl = rand.random(20, 60);
-                let stroke = rand.random(4, 12);
+                let nscl = rand.random(100, 140);//hz
+                let stroke = rand.random(3, 9);//4, 12
                 
                 gend.brush(gend.pathfind(this.x, this.y, to.x, to.y, tile => (tile.solid() ? 5 : 0) + gend.noise(tile.x, tile.y, 1, 1, 1 / nscl) * 60, Astar.manhattan), stroke);
             }
