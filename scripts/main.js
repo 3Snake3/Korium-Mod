@@ -17,7 +17,7 @@ require("vanillaContent/environment");
 
    require("sunlinght/blocks/turrets");
    require("sunlinght/blocks/power");
-   require("sunlinght/blocks/defense");
+   //require("sunlinght/blocks/defense");
 
     // empire //
 	
