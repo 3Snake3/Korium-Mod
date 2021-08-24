@@ -2,10 +2,25 @@ const korium = Vars.content.getByName(ContentType.item, "koriummod-korium");
 
 function ChargingWall(name, maxChargeStages, reqCharge, stageUpgradeMultiplier, additionally){
 	
-	this = extendContent(Wall, name, additionally)
-	let block = this;
+	var a = additionaly;
 	
-	this.buildType = () => {
+	this = extendContent(Wall, name, {
+		
+		localizedName: a.ocalizedName,
+	    description: a.description,
+	
+	    buildVisibility: BuildVisibility.shown,
+	    category: Category.defense,
+		
+	    size: a.size,
+	    health: a.health,
+	
+        requirements: a.requirements,
+	})
+	
+	var block = this;
+	
+	this.buildType = function(){
 		return extendContent(Wall.WallBuild, block, {
 			
 			charge: 0,
@@ -15,14 +30,14 @@ function ChargingWall(name, maxChargeStages, reqCharge, stageUpgradeMultiplier, 
 			upgradeMultiplier: stageUpgradeMultiplier,
 			requiredCharge: reqCharge,
 			
-			damage(damage){
+			damage(d){
 				
-				this.charge += damage / 10;
+				this.charge += d / 10;
 				
 				this.checkStages();
 				
-                print("Special damage (" + damage + "), ");
-		        this.super$damage(damage);
+                print("Special damage (" + d + "), ");
+		        this.super$damage(d);
             },
 			
 			checkStages(){
