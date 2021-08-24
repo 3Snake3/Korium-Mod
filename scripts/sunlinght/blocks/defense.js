@@ -1,6 +1,6 @@
 const korium = Vars.content.getByName(ContentType.item, "koriummod-korium");
 
-function ChargingWall(name, maxChargeStage, reqCharge, stageUpgradeMultiplier, additionally){
+function ChargingWall(name, maxChargeStages, reqCharge, stageUpgradeMultiplier, additionally){
 	
 	this = extendContent(Wall, name, additionally)
 	let block = this;
@@ -10,7 +10,7 @@ function ChargingWall(name, maxChargeStage, reqCharge, stageUpgradeMultiplier, a
 			
 			charge: 0,
 			chargeStage: 1,
-			maxChargeStages: maxChargeStage,
+			maxChargeStage: maxChargeStages,
 			
 			upgradeMultiplier: stageUpgradeMultiplier,
 			requiredCharge: reqCharge,
@@ -27,16 +27,17 @@ function ChargingWall(name, maxChargeStage, reqCharge, stageUpgradeMultiplier, a
 			
 			checkStages(){
 				
-				if(this.chargeStage > this.maxChargeStages){
-					this.chargeStage = this.maxChargeStages;
+				if(this.chargeStage > this.maxChargeStage){
+					this.chargeStage = this.maxChargeStage;
 				}else{
 					
 				    if(this.charge >= (this.requiredCharge * this.chargeStage)){
 						
-						this.charge = 0;
-						
-						if(!(this.chargeStage >= this.maxChargeStages)){
+						if(!(this.chargeStage >= this.maxChargeStage)){
+														
+							this.charge = 0;
 							this.chargeStage++;
+							
 						    print("Update Charge Stage to" + this.chargeStage);
 						}
 					}

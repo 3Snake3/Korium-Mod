@@ -1,4 +1,4 @@
-function getTex(tex){  return Core.atlas.find("koriummod-" + tex)  }
+const getTex = tex => Core.atlas.find("koriummod-" + tex);
 
 const sword = extendContent(UnitType, "sword", {
 	
@@ -11,7 +11,7 @@ const sword = extendContent(UnitType, "sword", {
 	
 	init(){
         this.super$init();
-        sword.weapons.add(
+        this.weapons.add(
 
             extendContent(Weapon, "sword-weapon", {
 		        load(){
@@ -21,10 +21,10 @@ const sword = extendContent(UnitType, "sword", {
 	                this.region = getTex("sword-weapon");
 	            }, 
 				
-				mirror: true,
-                reload: 9,
+				//mirror: true,
+                reload: 10,
                 x: 4,
-                y: 1,
+                y: 2,
                 top: false,
                 ejectEffect: Fx.casing1,
                 bullet: Bullets.standardCopper,
