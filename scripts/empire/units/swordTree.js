@@ -21,7 +21,8 @@ const sword = extendContent(UnitType, "sword", {
 	                this.region = getTex("sword-weapon");
 	            }, 
 				
-				//mirror: true,
+				mirror: true,
+				alternate: true,
                 reload: 10,
                 x: 4,
                 y: 2,

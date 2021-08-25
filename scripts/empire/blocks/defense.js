@@ -4,22 +4,23 @@ const siron = Vars.content.getByName(ContentType.item, "koriummod-siron");
 const sironShield = extendContent(ForceProjector, "siron-shield", {
   
     localizedName: "Siron shield",
-    description: "abmogubuga",
+    description: "",
 	
     category: Category.effect,
     buildVisibility: BuildVisibility.shown,
 	
     size: 4,
-    health: 900,
-    phaseUseTime: 110,
-    phaseRadiusBoost: 17,
-    radius: 210,
-    shieldHealth: 1850,
-    cooldownNormal: 3.5,
-    cooldownLiquid: 1.7,
-    cooldownBrokenBase: 2.5,
-    basePowerDraw: 8.0,
-    canOverdrive: true,
+    health: 950,
+    itemCapasity: 20,
+
+    radius: 188.5,
+    shieldHealth: 1750,
+    cooldownNormal: 3.8,
+    cooldownLiquid: 3.0,
+    cooldownBrokenBase: 1.6,
+	phaseUseTime: 170,
+    phaseRadiusBoost: 18.1,
+    //basePowerDraw: 8.0,hm
 	
     buildType: prov(() => {
         var entity = extend(ForceProjector.ForceBuild, sironShield,{
@@ -31,7 +32,7 @@ const sironShield = extendContent(ForceProjector, "siron-shield", {
 
                     Draw.z(Layer.shields);
 
-                    Draw.color(Tmp.c1.set(this.team.color).lerp(korium.color, this.phaseHeat), Color.white, Mathf.clamp(this.hit));
+                    Draw.color(this.team.color, Tmp.c1.set(Color.white).lerp(korium.color, this.phaseHeat), Mathf.clamp(this.hit));
 
                     if(Core.settings.getBool("animatedshields")){
                         Fill.poly(this.x, this.y, 6, radius);
@@ -60,3 +61,57 @@ sironShield.consumes.item(korium).boost();
 sironShield.consumes.power(11.1);
 
 sironShield.requirements = ItemStack.with(siron, 120, Items.titanium, 95, Items.silicon, 115);
+
+const titaniumShield = extendContent(ForceProjector, "titanium-shield", {
+	
+	localizedName: "Titanium shield",
+    description: "",
+	
+    category: Category.effect,
+    buildVisibility: BuildVisibility.shown,
+	
+    size: 3,
+    health: 650,
+    phaseUseTime: 105,
+    phaseRadiusBoost: 12,
+    radius: 145,
+    shieldHealth: 1100,
+    cooldownNormal: 2.8,
+    cooldownLiquid: 1.5,
+    cooldownBrokenBase: 1.9,
+    basePowerDraw: 8.0,
+	
+	buildType: prov(() => {
+        var entity = extend(ForceProjector.ForceBuild, sironShield,{
+			
+            drawShield(){
+				
+                if(!this.broken){
+                    var radius = this.realRadius();
+
+                    Draw.z(Layer.shields);
+
+                    Draw.color(this.team.color, Tmp.c1.set(Color.white).lerp(Color.blue, this.phaseHeat), Mathf.clamp(this.hit));
+
+                    if(Core.settings.getBool("animatedshields")){
+                        Fill.poly(this.x, this.y, 8, radius);
+                    }else{
+                        Lines.stroke(1.8);
+                        Draw.alpha(0.09 + Mathf.clamp(0.08 * this.hit));
+                        Fill.poly(this.x, this.y, 8, radius);
+                        Draw.alpha(1);
+                        Lines.poly(this.x, this.y, 8, radius);
+                        Draw.reset();
+						
+                    }
+					
+                }
+
+            Draw.reset();
+			
+            }
+        });
+		
+    return entity;
+	}),
+});
