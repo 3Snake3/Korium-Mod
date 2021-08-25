@@ -17,5 +17,5 @@ const procionite = extendContent(Liquid, "procionite", {
 	temperature: 1.0,
 	viscosity: 0.88,
     effect: StatusEffects.melting,
-    lightColor: Color.valueOf("534660").a(0.4),
+    lightColor: Color.valueOf("534660"),
 })
