@@ -1,6 +1,5 @@
-
 const siron = Vars.content.getByName(ContentType.item, "koriummod-siron");
-const procionit = Vars.content.getByName(ContentType.liquid, "koriummod-procionit");
+const procionite = Vars.content.getByName(ContentType.liquid, "koriummod-procionite");
 const kapronite = Vars.content.getByName(ContentType.item, "koriummod-kapronite");
 const korium = Vars.content.getByName(ContentType.item, "koriummod-korium");
 
@@ -88,14 +87,14 @@ koriumFloor.asFloor().decoration = koriumBoulder;
 const procionitBlock = newBlock("procionit-block", "Procionit Block", 1);
 const procionitIce = newFloor("procionit-ice", "Procionit Ice", 3, 0.9, false, 0, 0);
 
-const liquidProcionit = newLiquidFloor("liquid-procionit", "Liquid Procionit", 0, 0.20, true);
-  liquidProcionit.cacheLayer = CacheLayer.tar;
-  liquidProcionit.liquidDrop = procionit;
-  liquidProcionit.emitLight = true;
-  liquidProcionit.lightRadius = 31;
-  liquidProcionit.lightColor = Color.valueOf("#534660");
-  liquidProcionit.status = StatusEffects.melting;
-  liquidProcionit.statusDuration = 240;
+const liquidProcionite = newLiquidFloor("liquid-procionite", "Liquid Procionite", 0, 0.20, true);
+  liquidProcionite.cacheLayer = CacheLayer.tar;
+  liquidProcionite.liquidDrop = procionite;
+  liquidProcionite.emitLight = true;
+  liquidProcionite.lightRadius = 31;
+  liquidProcionite.lightColor = Color.valueOf("534660");
+  liquidProcionite.status = StatusEffects.melting;
+  liquidProcionite.statusDuration = 240;
   
 const procionitUnits = newBlock("procionit-units", "Units in Procionit", 1);
 
