@@ -33,7 +33,7 @@ const sironShield = extendContent(ForceProjector, "siron-shield", {
         Lines.stroke(1);
         Lines.poly(x * this.tilesize + offset, y * this.tilesize + offset, 8, radius);
         Draw.color();
-    }
+    },
 	
     buildType: prov(() => {
         var entity = extend(ForceProjector.ForceBuild, sironShield,{
@@ -104,7 +104,7 @@ const titaniumShield = extendContent(ForceProjector, "titanium-shield", {
         Lines.stroke(1);
         Lines.poly(x * this.tilesize + offset, y * this.tilesize + offset, 10, radius);
         Draw.color();
-    }
+    },
 	
 	buildType: prov(() => {
         var entity = extend(ForceProjector.ForceBuild, titaniumShield,{
