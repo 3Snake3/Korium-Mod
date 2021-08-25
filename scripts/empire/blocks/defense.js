@@ -23,6 +23,18 @@ const sironShield = extendContent(ForceProjector, "siron-shield", {
     phaseRadiusBoost: 18.1,
     //basePowerDraw: 8.0,hm
 	
+	drawPlace(x, y, rotation, valid){
+        this.super$drawPlace(x, y, rotation, valid);
+
+        Draw.color(Pal.gray);
+        Lines.stroke(3);
+        Lines.poly(x * this.tilesize + offset, y * this.tilesize + offset, 8, radius);
+        Draw.color(player.team().color);
+        Lines.stroke(1);
+        Lines.poly(x * this.tilesize + offset, y * this.tilesize + offset, 8, radius);
+        Draw.color();
+    }
+	
     buildType: prov(() => {
         var entity = extend(ForceProjector.ForceBuild, sironShield,{
 			
@@ -38,7 +50,7 @@ const sironShield = extendContent(ForceProjector, "siron-shield", {
                     if(Core.settings.getBool("animatedshields")){
                         Fill.poly(this.x, this.y, 8, radius);
                     }else{
-                        Lines.stroke(1.5);
+                        Lines.stroke(1.8);
                         Draw.alpha(0.09 + Mathf.clamp(0.08 * this.hit));
                         Fill.poly(this.x, this.y, 8, radius);
                         Draw.alpha(1);
@@ -82,6 +94,18 @@ const titaniumShield = extendContent(ForceProjector, "titanium-shield", {
     cooldownBrokenBase: 1.9,
     basePowerDraw: 8.0,
 	
+	drawPlace(x, y, rotation, valid){
+        this.super$drawPlace(x, y, rotation, valid);
+
+        Draw.color(Pal.gray);
+        Lines.stroke(3);
+        Lines.poly(x * this.tilesize + offset, y * this.tilesize + offset, 10, radius);
+        Draw.color(player.team().color);
+        Lines.stroke(1);
+        Lines.poly(x * this.tilesize + offset, y * this.tilesize + offset, 10, radius);
+        Draw.color();
+    }
+	
 	buildType: prov(() => {
         var entity = extend(ForceProjector.ForceBuild, titaniumShield,{
 			
@@ -95,13 +119,13 @@ const titaniumShield = extendContent(ForceProjector, "titanium-shield", {
                     Draw.color(Tmp.c1.set(this.team.color).lerp(Items.titanium.color, this.phaseHeat), Color.white, Mathf.clamp(this.hit));
 
                     if(Core.settings.getBool("animatedshields")){
-                        Fill.poly(this.x, this.y, 12, radius);
+                        Fill.poly(this.x, this.y, 10, radius);
                     }else{
                         Lines.stroke(1.8);
                         Draw.alpha(0.09 + Mathf.clamp(0.08 * this.hit));
-                        Fill.poly(this.x, this.y, 12, radius);
+                        Fill.poly(this.x, this.y, 10, radius);
                         Draw.alpha(1);
-                        Lines.poly(this.x, this.y, 12, radius);
+                        Lines.poly(this.x, this.y, 10, radius);
                         Draw.reset();
                     }
 					
@@ -116,7 +140,8 @@ const titaniumShield = extendContent(ForceProjector, "titanium-shield", {
 	}),
 });
 
-titaniumShield.consumes.item(Items.titanium).boost();
+titaniumShield.consumes.item(Items.titanium);
+titaniumShield.consumes.item(Items.phaseFabric).boost();
 titaniumShield.consumes.power(8.7);
 
-titaniumShield.requirements = ItemStack.with(Items.graphenite, 140, Items.titanium, 240, Items.silicon, 170);
+titaniumShield.requirements = ItemStack.with(Items.graphite, 140, Items.titanium, 240, Items.silicon, 170);
