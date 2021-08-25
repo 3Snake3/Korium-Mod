@@ -2,6 +2,10 @@ const korium = Vars.content.getByName(ContentType.item, "koriummod-korium");
 const siron = Vars.content.getByName(ContentType.item, "koriummod-siron");
 const kapronite = Vars.content.getByName(ContentType.item, "koriummod-kapronite");
 
+const getTex = tex => Core.atlas.find("koriummod-" + tex);
+
+//siron shield
+
 const sironShield = extendContent(ForceProjector, "siron-shield", {
   
     localizedName: "Siron shield",
@@ -21,14 +25,18 @@ const sironShield = extendContent(ForceProjector, "siron-shield", {
     cooldownBrokenBase: 1.6,
 	phaseUseTime: 170,
     phaseRadiusBoost: 18.1,
-    //basePowerDraw: 8.0,hm
+	
+	load(){	
+	    this.super$load();
+	    this.teamRegion = getTex("siron-shield-team");
+	}, 
 	
 	drawPlace(x, y, rotation, valid){
 
         Draw.color(Pal.gray);
         Lines.stroke(3);
         Lines.poly(x * Vars.tilesize + this.offset, y * Vars.tilesize + this.offset, 8, this.radius);
-        Draw.color(this.player.team().color);
+        Draw.color(Vars.player.team().color);
         Lines.stroke(1);
         Lines.poly(x * Vars.tilesize + this.offset, y * Vars.tilesize + this.offset, 8, this.radius);
         Draw.color();
@@ -74,6 +82,8 @@ sironShield.consumes.power(11.1);
 
 sironShield.requirements = ItemStack.with(siron, 120, Items.titanium, 95, Items.silicon, 115);
 
+//titanium shield
+
 const titaniumShield = extendContent(ForceProjector, "titanium-shield", {
 	
 	localizedName: "Titanium shield",
@@ -91,14 +101,17 @@ const titaniumShield = extendContent(ForceProjector, "titanium-shield", {
     cooldownNormal: 1.8,
     cooldownLiquid: 1.4,
     cooldownBrokenBase: 1.5,
-    basePowerDraw: 8.0,
+	
+	load(){	
+	    this.super$load();
+	    this.teamRegion = getTex("titanium-shield-team");
+	}, 
 	
 	drawPlace(x, y, rotation, valid){
 
         Draw.color(Pal.gray);
         Lines.stroke(3);
         Lines.poly(x * Vars.tilesize + this.offset, y * Vars.tilesize + this.offset, 10, this.radius);
-        //Draw.color(player.team().color);
 		Draw.color(Items.titanium.color);
         Lines.stroke(1);
         Lines.poly(x * Vars.tilesize + this.offset, y * Vars.tilesize + this.offset, 10, this.radius);
@@ -140,7 +153,8 @@ const titaniumShield = extendContent(ForceProjector, "titanium-shield", {
 });
 
 titaniumShield.consumes.item(Items.titanium);
-titaniumShield.consumes.item(Items.phaseFabric).boost();
+//titaniumShield.consumes.items(ItemStack.with(Items.titanium, 1, Items.phaseFabric.boost(), 1));
+
 titaniumShield.consumes.power(8.7);
 
 titaniumShield.requirements = ItemStack.with(Items.graphite, 140, Items.titanium, 240, Items.silicon, 170);
