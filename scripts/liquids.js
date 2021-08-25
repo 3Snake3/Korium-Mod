@@ -12,7 +12,7 @@ function newLiquid(name, realName, temperature, viscosity, flammability, explosi
 const procionite = extendContent(Liquid, "procionite", {
 
     localizedName: "Procionite",
-	color: Color.valueOf("686a9d")
+	color: Color.valueOf("686a9d"),
 	
 	temperature: 1.0,
 	viscosity: 0.88,
