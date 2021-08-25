@@ -28,10 +28,10 @@ const sironShield = extendContent(ForceProjector, "siron-shield", {
 
         Draw.color(Pal.gray);
         Lines.stroke(3);
-        Lines.poly(x * this.tilesize + this.offset, y * this.tilesize + this.offset, 8, this.radius);
-        Draw.color(player.team().color);
+        Lines.poly(x * Vars.tilesize + this.offset, y * Vars.tilesize + this.offset, 8, this.radius);
+        Draw.color(this.player.team().color);
         Lines.stroke(1);
-        Lines.poly(x * this.tilesize + this.offset, y * this.tilesize + this.offset, 8, this.radius);
+        Lines.poly(x * Vars.tilesize + this.offset, y * Vars.tilesize + this.offset, 8, this.radius);
         Draw.color();
     },
 	
@@ -87,11 +87,11 @@ const titaniumShield = extendContent(ForceProjector, "titanium-shield", {
     health: 650,
     phaseUseTime: 105,
     phaseRadiusBoost: 12,
-    radius: 145,
-    shieldHealth: 1100,
-    cooldownNormal: 2.8,
-    cooldownLiquid: 1.5,
-    cooldownBrokenBase: 1.9,
+    radius: 125,
+    shieldHealth: 840,
+    cooldownNormal: 1.8,
+    cooldownLiquid: 1.4,
+    cooldownBrokenBase: 1.5,
     basePowerDraw: 8.0,
 	
 	drawPlace(x, y, rotation, valid){
@@ -99,11 +99,11 @@ const titaniumShield = extendContent(ForceProjector, "titanium-shield", {
 
         Draw.color(Pal.gray);
         Lines.stroke(3);
-        Lines.poly(x * this.tilesize + this.offset, y * this.tilesize + this.offset, 10, this.radius);
+        Lines.poly(x * Vars.tilesize + this.offset, y * Vars.tilesize + this.offset, 10, this.radius);
         //Draw.color(player.team().color);
 		Draw.color(Items.titanium.color);
         Lines.stroke(1);
-        Lines.poly(x * this.tilesize + this.offset, y * this.tilesize + this.offset, 10, this.radius);
+        Lines.poly(x * Vars.tilesize + this.offset, y * Vars.tilesize + this.offset, 10, this.radius);
         Draw.color();
     },
 	
@@ -117,7 +117,7 @@ const titaniumShield = extendContent(ForceProjector, "titanium-shield", {
 
                     Draw.z(Layer.shields);
 
-                    Draw.color(Tmp.c1.set(this.team.color).lerp(Items.titanium.color, this.phaseHeat), Color.white, Mathf.clamp(this.hit));
+                    Draw.color(Items.titanium.color, Color.white, Mathf.clamp(this.hit));
 
                     if(Core.settings.getBool("animatedshields")){
                         Fill.poly(this.x, this.y, 10, radius);
