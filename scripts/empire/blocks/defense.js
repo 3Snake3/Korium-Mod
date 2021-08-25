@@ -100,7 +100,8 @@ const titaniumShield = extendContent(ForceProjector, "titanium-shield", {
         Draw.color(Pal.gray);
         Lines.stroke(3);
         Lines.poly(x * this.tilesize + this.offset, y * this.tilesize + this.offset, 10, this.radius);
-        Draw.color(player.team().color);
+        //Draw.color(player.team().color);
+		Draw.color(Items.titanium.color);
         Lines.stroke(1);
         Lines.poly(x * this.tilesize + this.offset, y * this.tilesize + this.offset, 10, this.radius);
         Draw.color();
