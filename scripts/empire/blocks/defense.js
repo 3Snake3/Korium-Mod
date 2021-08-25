@@ -94,7 +94,6 @@ const titaniumShield = extendContent(ForceProjector, "titanium-shield", {
     basePowerDraw: 8.0,
 	
 	drawPlace(x, y, rotation, valid){
-        this.super$drawPlace(x, y, rotation, valid);
 
         Draw.color(Pal.gray);
         Lines.stroke(3);
