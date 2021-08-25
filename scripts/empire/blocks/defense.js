@@ -28,10 +28,10 @@ const sironShield = extendContent(ForceProjector, "siron-shield", {
 
         Draw.color(Pal.gray);
         Lines.stroke(3);
-        Lines.poly(x * this.tilesize + offset, y * this.tilesize + offset, 8, radius);
+        Lines.poly(x * this.tilesize + this.offset, y * this.tilesize + this.offset, 8, radius);
         Draw.color(player.team().color);
         Lines.stroke(1);
-        Lines.poly(x * this.tilesize + offset, y * this.tilesize + offset, 8, radius);
+        Lines.poly(x * this.tilesize + this.offset, y * this.tilesize + this.offset, 8, radius);
         Draw.color();
     },
 	
@@ -99,10 +99,10 @@ const titaniumShield = extendContent(ForceProjector, "titanium-shield", {
 
         Draw.color(Pal.gray);
         Lines.stroke(3);
-        Lines.poly(x * this.tilesize + offset, y * this.tilesize + offset, 10, radius);
+        Lines.poly(x * this.tilesize + this.offset, y * this.tilesize + this.offset, 10, radius);
         Draw.color(player.team().color);
         Lines.stroke(1);
-        Lines.poly(x * this.tilesize + offset, y * this.tilesize + offset, 10, radius);
+        Lines.poly(x * this.tilesize + this.offset, y * this.tilesize + this.offset, 10, radius);
         Draw.color();
     },
 	
