@@ -95,8 +95,8 @@ const elysiumGenerator = extend(PlanetGenerator, {
                 this.connected.add(to);
                 
                 //let gend = elysiumGenerator;
-                let nscl = rand.random(100, 140);//hz
-                let stroke = rand.random(3, 9);//4, 12
+                let nscl = rand.random(100, 140) * 6;
+                let stroke = rand.random(3, 9);
                 
                 gend.brush(gend.pathfind(this.x, this.y, to.x, to.y, tile => (tile.solid() ? 50 : 0) + gend.noise(tile.x, tile.y, 2, 0.4, 1 / nscl) * 500, Astar.manhattan), stroke);
             }
