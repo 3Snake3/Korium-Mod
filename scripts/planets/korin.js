@@ -30,7 +30,7 @@ const elysiumGenerator = extend(PlanetGenerator, {
         tile.floor = this.getBlock(position);
         tile.block = tile.floor.asFloor().wall;
 
-        if(Ridged.noise3d(1, position.x, position.y, position.z, 2, 22) > 0.31){//#31!!!
+        if(Ridged.noise3d(this.seed, position.x, position.y, position.z, 22) > 0.32){//#31!!!
             tile.block = Blocks.air;
         };
     },
@@ -46,7 +46,6 @@ const elysiumGenerator = extend(PlanetGenerator, {
         let rad = this.scl;
         let temp = Mathf.clamp(Math.abs(position.y * 2) / rad);
         let tnoise = Simplex.noise3d(this.seed, 7, 0.56, 1/3, position.x, position.y + 999, position.z);
-        
         temp = Mathf.lerp(temp, tnoise, 0.5);
         height *= 1.2;
         height = Mathf.clamp(height);
@@ -54,11 +53,11 @@ const elysiumGenerator = extend(PlanetGenerator, {
 		let tar = Simplex.noise3d(this.seed, 4, 0.55, 1/2, position.x, position.y + 999, position.z) * 0.3 + Tmp.v31.dst(0, 0, 1) * 0.2;
 
         let res = arr[Mathf.clamp(Math.floor(temp * arr.length), 0, arr[0].length - 1)][Mathf.clamp(Math.floor(height * arr[0].length), 0, arr[0].length - 1)];
-		if(tar > 0.5){
-            return this.tars.get(res, res);
-        }else{
-            return res;
-        }
+		//if(tar > 0.5){
+        //    return this.tars.get(res, res);
+        //}else{
+        //    return res;
+        //}
     },
 	
 	noise(x, y, octaves, falloff, scl, mag){
@@ -75,14 +74,14 @@ const elysiumGenerator = extend(PlanetGenerator, {
         const rand = this.rand;
         rand.setSeed(sec.id);
         
-        //let gen = new TileGen();
-        //this.tiles.each((x, y) => {
-        //    gen.reset();
-        //    let position = this.sector.rect.project(x / tiles.width, y / tiles.height);
-        //
-        //    this.genTile(position, gen);
-        //    tiles.set(x, y, new Tile(x, y, gen.floor, gen.overlay, gen.block));
-        //});
+        let gen = new TileGen();
+        this.tiles.each((x, y) => {
+            gen.reset();
+            let position = this.sector.rect.project(x / tiles.width, y / tiles.height);
+        
+            this.genTile(position, gen);
+            tiles.set(x, y, new Tile(x, y, gen.floor, gen.overlay, gen.block));
+        });
 		
 		const Room = {
             x: 0, y: 0, radius: 0,
@@ -94,10 +93,10 @@ const elysiumGenerator = extend(PlanetGenerator, {
                 this.connected.add(to);
                 
                 //let gend = elysiumGenerator;
-                let nscl = rand.random(100, 140) * 6;
-                let stroke = rand.random(3, 9);
-                
-                gend.brush(gend.pathfind(this.x, this.y, to.x, to.y, tile => (tile.solid() ? 50 : 0) + gend.noise(tile.x, tile.y, 2, 0.4, 1 / nscl) * 500, Astar.manhattan), stroke);
+                let nscl = rand.random(20, 60);//or (100, 140) * 6?
+                let stroke = rand.random(4, 12);//or 3, 9?
+//                                                                                                                                 2?0.4?            500?
+                gend.brush(gend.pathfind(this.x, this.y, to.x, to.y, tile => (tile.solid() ? 5 : 0) + gend.noise(tile.x, tile.y, 2, 1, 1 / nscl) * 60, Astar.manhattan), stroke);
             }
         };
 		
