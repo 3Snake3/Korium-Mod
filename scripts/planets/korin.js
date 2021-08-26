@@ -30,7 +30,7 @@ const elysiumGenerator = extend(PlanetGenerator, {
         tile.floor = this.getBlock(position);
         tile.block = tile.floor.asFloor().wall;
 
-        if(Ridged.noise3d(1, position.x, position.y, position.z, 2, 22) > 0.32){//#31!!!
+        if(Ridged.noise3d(1, position.x, position.y, position.z, 2, 22) > 0.31){//#31!!!
             tile.block = Blocks.air;
         };
     },
