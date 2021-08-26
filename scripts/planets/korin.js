@@ -75,15 +75,14 @@ const elysiumGenerator = extend(PlanetGenerator, {
         const rand = this.rand;
         rand.setSeed(sec.id);
         
-        //tile, sector
-        let gen = new TileGen();
-        this.tiles.each((x, y) => {
-            gen.reset();
-            let position = this.sector.rect.project(x / tiles.width, y / tiles.height);
-
-            this.genTile(position, gen);
-            tiles.set(x, y, new Tile(x, y, gen.floor, gen.overlay, gen.block));
-        });
+        //let gen = new TileGen();
+        //this.tiles.each((x, y) => {
+        //    gen.reset();
+        //    let position = this.sector.rect.project(x / tiles.width, y / tiles.height);
+        //
+        //    this.genTile(position, gen);
+        //    tiles.set(x, y, new Tile(x, y, gen.floor, gen.overlay, gen.block));
+        //});
 		
 		const Room = {
             x: 0, y: 0, radius: 0,
