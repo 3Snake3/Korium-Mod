@@ -49,7 +49,7 @@ const underwaterConduit = extendContent(ArmoredConduit, "underwater-conduit", {
         //make sure that there are liquids in this place
         if(!floor.isLiquid){
 			return false;
-		}else if(water.includes(floor.name)){
+		}else if(waters.includes(floor.name)){
 			return true;
 		}else{
 		    return false;	
