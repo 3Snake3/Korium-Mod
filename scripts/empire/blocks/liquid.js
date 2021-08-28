@@ -65,4 +65,4 @@ const underwaterConduit = extendContent(ArmoredConduit, "underwater-conduit", {
 	}),
 });
 
-underwaterConduit.requirements = ItemStack.with(siron, 2, Items.silicon, Items.metaglass, 2);
+underwaterConduit.requirements = ItemStack.with(siron, 3, Items.silicon, 2, Items.metaglass, 3);
