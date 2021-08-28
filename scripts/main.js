@@ -29,6 +29,7 @@ require("vanillaContent/environment");
 	require("empire/blocks/distribution");
     require("empire/blocks/defense");
 	require("empire/blocks/turrets");
+	require("empire/blocks/liquid");
 	
 ////// OTHER //////
 
