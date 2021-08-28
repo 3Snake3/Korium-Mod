@@ -37,11 +37,11 @@ const underwaterConduit = extendContent(ArmoredConduit, "underwater-conduit", {
 		
 		this.topRegions = [];
 		for(let i = 0; i < 5; i++){
-			this.topRegions[i] = getTex(this.name+"top"+i)
+			this.topRegions[i] = getTex(this.name+"-top-"+i)
 		}
 
-        this.downRegion = getTex(this.name + "down")
-		this.upRegion = getTex(this.name + "up")
+        this.downRegion = getTex(this.name + "-down")
+		this.upRegion = getTex(this.name + "-up")
 	},
 	
 	canPlaceOn(tile, team){
