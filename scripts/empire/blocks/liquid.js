@@ -1,7 +1,7 @@
 const siron = Vars.content.getByName(ContentType.item, "koriummod-siron");
 const kapronite = Vars.content.getByName(ContentType.item, "koriummod-kapronite");
 
-const waters = ["shallow-water", "sand-water", "darksand-water", "deep-water", "tainted-water", "darksand-tainted-water"];
+const waters = [Blocks.water, Blocks.sandWater, Blocks.darksandWater, Blocks.deepwater, Blocks.taintedWater, Blocks.darksandTaintedWater, Blocks.stone];
 
 const getTex = tex => Core.atlas.find("koriummod-" + tex);
 
@@ -16,7 +16,7 @@ const underwaterConduit = extendContent(ArmoredConduit, "underwater-conduit", {
     buildVisibility: BuildVisibility.shown,
 	buildCostMultiplier: 2,
 	
-	leaks: false,
+	//leaks: false,
 	requiresWater: true,
 	placeableLiquid: true,
 	
@@ -47,13 +47,7 @@ const underwaterConduit = extendContent(ArmoredConduit, "underwater-conduit", {
 		let floor = tile.floor;
 		
         //make sure that there are liquids in this place
-        if(!floor.isLiquid){
-			return false;
-		}else if(waters.includes(floor.name)){
-			return true;
-		}else{
-		    return false;	
-		}
+		return floor.isLiquid ?	waters.includes(floor) : else;
     },
 	
 	buildType: prov(() => {
