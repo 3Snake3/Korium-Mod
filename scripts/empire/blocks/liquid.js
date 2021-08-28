@@ -58,7 +58,7 @@ const underwaterConduit = extendContent(ArmoredConduit, "underwater-conduit", {
     },
 	
 	buildType: prov(() => {
-        return extend(Conduit.ConduitBuild, underwaterConduit,{
+        return extend(ArmoredConduit.ArmoredConduitBuild, underwaterConduit,{
 			
         
         });
