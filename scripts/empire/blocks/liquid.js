@@ -37,7 +37,7 @@ const underwaterConduit = extendContent(ArmoredConduit, "underwater-conduit", {
 		
 		this.topRegions = [];
 		for(let i = 0; i < 5; i++){
-			this.topRegions.push(getTex(this.name+"top"+i))
+			this.topRegions[i] = getTex(this.name+"top"+i)
 		}
 
         this.downRegion = getTex(this.name + "down")
