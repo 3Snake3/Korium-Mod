@@ -2,7 +2,7 @@ name: "koriummod"
 displayName: "KoriuMMoD"
 author: "SuperJaba2000 & more..."
 description: "amogus"
-version: " experimental snapshot 11"
+version: " experimental snapshot 12"
 minGameVersion: "128.1"
 hidden: false
 dependencies: []

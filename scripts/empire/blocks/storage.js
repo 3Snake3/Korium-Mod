@@ -1,10 +1,6 @@
 const siron = Vars.content.getByName(ContentType.item, "koriummod-siron");
 const kapronite = Vars.content.getByName(ContentType.item, "koriummod-kapronite");
 
-const protectionTime = 60*10;
-const protectionReloadTime = 60 * 20;
-
-
 //CORE FLICKERING
 
 const coreFlickering = extendContent(CoreBlock, "core-flickering", {
@@ -41,62 +37,16 @@ const coreStar = extendContent(CoreBlock, "core-star", {
     unitType: UnitTypes.gamma,//TODO mod unit
     unitCapModifier: 16,
     researchCostMultiplier: 0.08,
-	configurable: true,
-
-    thrusterLenght: 34/4,
 
 });
 
 coreStar.requirements = ItemStack.with(Items.copper, 2000, siron, 3000, Items.graphite, 1000, Items.silicon, 2000);
 
-coreStar.buildType = () => {
-    const b = extendContent(CoreBlock.CoreBuild, coreStar, {
-		
-	protection: false,
-		
-    buildConfiguration(table){
-		
-	    table.button(Icon.eye, () => {
-			
-			var canUse = true;
-			
-			if(canUse){
-				canUse = false;
-				this.protection = true;
-				
-				Time.run(protectionTime,()=>{
-                    this.protection = false;
-				});
-				
-				
-				Time.run(protectionReloadTime,()=>{
-					canUse = true;
-				});
-			}
-			
-		}).size(40);
-	},
-	
-	/*
-	damage(source, damage){
-
-			if(this.protection){
-				this.super$damage(source, damage/5.0)
-			}else{
-				this.super$damage(source, damage)
-			}
-    }
-	*/
-			
-    });
-    return b;
-};
-
 //KAPRONITE UNLOADER
 
 const kaproniteUnloader = extendContent(Unloader, "kapronite-unloader", {
 
-	localizedName: "kapronite unloader",
+	localizedName: "Kapronite unloader",
 	category: Category.effect,
 	buildVisibility: BuildVisibility.shown,
 
