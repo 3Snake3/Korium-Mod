@@ -37,6 +37,7 @@ const coreStar = extendContent(CoreBlock, "core-star", {
     unitType: UnitTypes.gamma,//TODO mod unit
     unitCapModifier: 16,
     researchCostMultiplier: 0.08,
+    thrusterLength: 32/4,
 
 });
 
