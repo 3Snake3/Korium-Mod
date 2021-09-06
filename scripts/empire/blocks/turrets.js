@@ -38,7 +38,7 @@ const fragSiron = extendContent(FlakBulletType, 3.8, 19, {
     explodeRange: 22,
 });
 
-const bigArtillery = extendContent(ArtilleryBulletType, 3.4, 33.7, {
+const bigArtillery = extendContent(ArtilleryBulletType, 2.4, 33.7, {
 	lifeTime: 132,
 	splashDamageRadius: 32,
 	splashDamage: 18 * 1.9,
@@ -48,8 +48,13 @@ const bigArtillery = extendContent(ArtilleryBulletType, 3.4, 33.7, {
     lightOpacity: 0.72,
 	width: 29.6,
 	height: 29.2,
+	incendAmount: 15,
+    incendSpread: 26,
+	collides: true,
+    collidesTiles: true,
+    makeFire: true,
 	
-	fragBullet: extendContent(FlakBulletType, 2.9, 15, {
+	fragBullet: extendContent(FlakBulletType, 2.1, 15, {
 		lifeTime: 52,
 		splashDamageRadius: 23,
 		splashDamage: 11 * 1.2,
@@ -59,8 +64,11 @@ const bigArtillery = extendContent(ArtilleryBulletType, 3.4, 33.7, {
         lightOpacity: 0.49,
 		width: 18.9,
 		height: 19,
+		collides: true,
+        collidesTiles: true,
+        makeFire: true,
 		
-		fragBullet: extendContent(BasicBulletType, 1.2, 7, {
+		fragBullet: extendContent(BasicBulletType, 0.9, 7, {
 			width: 11,
             height: 12,
             shrinkY: 1,
@@ -126,13 +134,13 @@ const burningSky = extendContent(ItemTurret, "burning-sky", {
 	minRange: 110,
 	shots: 7,
 	inaccuracy: 19.8,
-	reloadTime: 142,
+	reloadTime: 297,
 	cooldown: 0.06,
 	velocityInaccuracy: 0.4,
-	recoilAmount: 9,
+	recoilAmount: 15,
 	targetAir: false,
 	shootSound: Sounds.artillery,
-	xRand: 19,
+	xRand: 11,
 });
 
 burningSky.requirements = ItemStack.with(kapronite, 850, siron, 540, Items.silicon, 350, Items.metaglass, 120);
