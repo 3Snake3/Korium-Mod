@@ -22,6 +22,7 @@ const sword = extendContent(UnitType, "sword", {
 	            }, 
 				
 				mirror: true,
+				flip: true,
 				alternate: true,
                 reload: 10,
                 x: 4,
