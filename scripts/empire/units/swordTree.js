@@ -13,9 +13,7 @@ const sword = extendContent(UnitType, "sword", {
         this.weapons.add(
 		    extend(Weapon, "sword-weapon", {
 				load(){
-					this.region = getTex(this.name);
-					this.outlineRegion = getTex(this.name + "-outline");
-					/*this.heatRegion =*/
+                    this.super$load();
 				},
 				
                 reload: 10,
