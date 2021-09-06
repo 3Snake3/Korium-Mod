@@ -1,5 +1,18 @@
 const getTex = tex => Core.atlas.find("koriummod-" + tex);
 
+//weapons
+
+const swordWeapon = extendContent(Weapon, "sword-weapon", {
+    reload: 10,
+    x: 4,
+    y: 2,
+    top: false,
+    ejectEffect: Fx.casing1,
+    bullet: Bullets.standardCopper,
+});
+
+//units
+
 const sword = extendContent(UnitType, "sword", {
 	
     localizedName: "Sword",
@@ -11,27 +24,7 @@ const sword = extendContent(UnitType, "sword", {
 	
 	init(){
         this.super$init();
-        this.weapons.add(
-
-            extendContent(Weapon, "sword-weapon", {
-		        load(){
-				
-	                this.outlineRegion = getTex("sword-weapon-outline");
-	                this.heatRegion = getTex("sword-weapon-heat");
-	                this.region = getTex("sword-weapon");
-	            }, 
-				
-				mirror: true,
-				flip: true,
-				alternate: true,
-                reload: 10,
-                x: 4,
-                y: 2,
-                top: false,
-                ejectEffect: Fx.casing1,
-                bullet: Bullets.standardCopper,
-            })
-        )
+        this.weapons.add(swordWeapon)
     }
 })
 
