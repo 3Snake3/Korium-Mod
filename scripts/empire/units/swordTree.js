@@ -12,6 +12,12 @@ const sword = extendContent(UnitType, "sword", {
 
 sword.weapons.add(
     extend(Weapon, "sword-weapon", {
+		load(){
+            this.outlineRegion = getTex("sword-weapon-outline");
+            this.heatRegion = getTex("sword-weapon-heat");
+            this.region = getTex("sword-weapon");
+        },
+		
         reload: 10,
         x: 4,
         y: 2,
