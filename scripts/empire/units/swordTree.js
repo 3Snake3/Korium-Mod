@@ -2,14 +2,14 @@ const getTex = tex => Core.atlas.find("koriummod-" + tex);
 
 //weapons
 
-const swordWeapon = extendContent(Weapon, "sword-weapon", {
+/*const swordWeapon = extend(Weapon, "sword-weapon", {
     reload: 10,
     x: 4,
     y: 2,
     top: false,
     ejectEffect: Fx.casing1,
     bullet: Bullets.standardCopper,
-});
+});*/
 
 //units
 
@@ -23,8 +23,17 @@ const sword = extendContent(UnitType, "sword", {
     health: 320,
 	
 	init(){
-        this.super$init();
-        this.weapons.add(swordWeapon)
+        this.weapons.add(
+		    extend(Weapon, "sword-weapon", {
+            reload: 10,
+            x: 4,
+            y: 2,
+            top: false,
+            ejectEffect: Fx.casing1,
+            bullet: Bullets.standardCopper,
+            })
+		)
+		this.super$init();
     }
 })
 
