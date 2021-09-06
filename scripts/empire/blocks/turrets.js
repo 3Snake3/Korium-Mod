@@ -38,8 +38,8 @@ const fragSiron = extendContent(FlakBulletType, 3.8, 19, {
     explodeRange: 22,
 });
 
-const bigArtillery = extendContent(ArtilleryBulletType, 4.5, 33.7, {
-	lifeTime: 149,
+const bigArtillery = extendContent(ArtilleryBulletType, 3.4, 33.7, {
+	lifeTime: 132,
 	splashDamageRadius: 32,
 	splashDamage: 18 * 1.9,
 	fragLifeMin: 0.7,
@@ -49,8 +49,8 @@ const bigArtillery = extendContent(ArtilleryBulletType, 4.5, 33.7, {
 	width: 29.6,
 	height: 29.2,
 	
-	fragBullet: extendContent(FlakBulletType, 3.4, 15, {
-		lifeTime: 64,
+	fragBullet: extendContent(FlakBulletType, 2.9, 15, {
+		lifeTime: 52,
 		splashDamageRadius: 23,
 		splashDamage: 11 * 1.2,
 		fragLifeMin: 0.4,
@@ -60,7 +60,7 @@ const bigArtillery = extendContent(ArtilleryBulletType, 4.5, 33.7, {
 		width: 18.9,
 		height: 19,
 		
-		fragBullet: extendContent(BasicBulletType, 2.9, 7, {
+		fragBullet: extendContent(BasicBulletType, 1.2, 7, {
 			width: 11,
             height: 12,
             shrinkY: 1,
@@ -70,6 +70,9 @@ const bigArtillery = extendContent(ArtilleryBulletType, 4.5, 33.7, {
             lightOpacity: 0.2,
             frontColor: Items.pyratite.color,
             despawnEffect: Fx.none,
+			collides: true,
+            collidesTiles: true,
+            makeFire: true,
 		}),
 		
 		fragBullets: 5,
@@ -92,7 +95,7 @@ const vortex = extendContent(ItemTurret, "vortex", {
 	health: 1755,
 
     xRand: 5,
-    reloadTime: 6,
+    reloadTime: 17,
     range: 225,
     recoilAmount: 3,
     rotateSpeed: 10,
