@@ -119,7 +119,7 @@ const burningSky = extendContent(ItemTurret, "burning-sky", {
 	size: 4,
 	health: 2950,
 	
-	range: 
+	range: 350,
 	minRange: 110,
 	shots: 7,
 	inaccuracy: 19.8,
