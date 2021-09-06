@@ -8,24 +8,17 @@ const sword = extendContent(UnitType, "sword", {
     speed: 0.55,
     hitSize: 9,
     health: 320,
-	
-	init(){
-        this.weapons.add(
-		    extend(Weapon, "sword-weapon", {
-				load(){
-                    this.super$load();
-				},
-				
-                reload: 10,
-                x: 4,
-                y: 2,
-                top: false,
-                ejectEffect: Fx.casing1,
-                bullet: Bullets.standardCopper,
-            })
-		)
-		this.super$init();
-    }
 })
+
+sword.weapons.add(
+    extend(Weapon, "sword-weapon", {
+        reload: 10,
+        x: 4,
+        y: 2,
+        top: false,
+        ejectEffect: Fx.casing1,
+        bullet: Bullets.standardCopper,
+    })
+)
 
 sword.constructor = () => extend(MechUnit, {})
